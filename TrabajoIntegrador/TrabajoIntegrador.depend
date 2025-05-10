@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\categoria.cpp
+
+1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\compra.cpp
+
+1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\fecha.cpp
+
+1746906531 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\main.cpp
+	<iostream>
+	"Menu.h"
+
+1746906489 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.h
+
+1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.cpp
+
+1746907706 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.cpp
+	"Funciones.h"
+
+1746909600 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.cpp
+	<iostream>
+	<cctype>
+	"Menu.h"
+	<limits>
+
+1746906641 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+
+1746906655 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+
+1746907548 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.h
+

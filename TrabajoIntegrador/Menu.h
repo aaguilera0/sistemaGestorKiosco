@@ -1,6 +1,6 @@
-#ifndef MENU_H_INCLUDED
-#define MENU_H_INCLUDED
+#pragma once
 
-
-
-#endif // MENU_H_INCLUDED
+class Menu{
+    public:
+        void mostrarMenuPrincipal();
+};

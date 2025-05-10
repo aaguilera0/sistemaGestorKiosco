@@ -46,6 +46,8 @@
 		<Unit filename="Producto.h" />
 		<Unit filename="Proveedor.cpp" />
 		<Unit filename="Proveedor.h" />
+		<Unit filename="ProveedorArchivo.cpp" />
+		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
