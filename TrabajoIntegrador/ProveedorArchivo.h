@@ -10,6 +10,7 @@ class ProveedorArchivo{
         ProveedorArchivo(std::string nombreArchivo);
 
         bool guardar(Proveedor registro);
-        int cantidadRegistros();
+        bool guardar(Proveedor registro, int posicion);
+        int getCantidadRegistros();
         Proveedor leer(int pos);
 };

@@ -9,22 +9,53 @@
 	<iostream>
 	"Menu.h"
 
-1746906489 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.h
+1746910985 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.h
 
 1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.cpp
 
-1746907706 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1747837919 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
+	"Menu.h"
+	"ProveedorManager.h"
+	<iostream>
+	<limits>
 
-1746909600 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.cpp
+1747837905 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.cpp
 	<iostream>
 	<cctype>
 	"Menu.h"
+	"Funciones.h"
 	<limits>
 
-1746906641 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+1747837434 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+	"ProveedorArchivo.h"
 
-1746906655 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+1747836745 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+	"Proveedor.h"
+	<cstring>
 
 1746907548 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.h
+
+1747673779 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.h
+	<string>
+
+1747837426 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
+	<string>
+	"Proveedor.h"
+
+1747685731 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedormanager.h
+
+1747837158 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.cpp
+	"RelacionProveedorProducto.h"
+	<cstring>
+
+1747668498 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.h
+	<string>
+
+1747837445 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+	<iostream>
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+	"ProveedorManager.h"
+	<string>
 

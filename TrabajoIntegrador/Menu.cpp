@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cctype>
 #include "Menu.h"
+#include "Funciones.h"
 #include <limits>
 using namespace std;
 
@@ -33,15 +34,15 @@ void Menu::mostrarMenuPrincipal()
 
         case 1:
             system("cls");
-            //mostrarMenuProductos();
+            //menuProductos();
             break;
         case 2:
             system("cls");
-            //mostrarMenuProveedores();
+            menuProveedores();
             break;
         case 3:
             system("cls");
-            //mostrarMenuCompras();
+            //menuCompras();
             break;
         case 0:
             system("cls");

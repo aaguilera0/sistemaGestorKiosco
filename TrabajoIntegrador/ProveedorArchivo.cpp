@@ -22,7 +22,25 @@ bool ProveedorArchivo::guardar(Proveedor registro){
 
     return resultado;
 }
-int ProveedorArchivo::cantidadRegistros(){
+bool ProveedorArchivo::guardar(Proveedor registro, int posicion){
+    FILE *pFile;
+    bool resultado;
+
+    pFile = fopen(_nombreArchivo.c_str(),"rb+");
+
+    if(pFile == nullptr){
+        return false;
+    }
+
+    fseek(pFile, posicion * sizeof(Proveedor), SEEK_SET);
+
+    resultado = fwrite(&registro,sizeof(Proveedor),1,pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}
+int ProveedorArchivo::getCantidadRegistros(){
     FILE *pFile;
     int cantidad, total;
 

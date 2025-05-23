@@ -45,7 +45,7 @@ bool Proveedor::getEstado(){
 //TENGO QUE AGREGAR VALIDACIONES EN LOS SETTERS.
 
 void Proveedor::setCuit(std::string cuit){
-    _cuit = cuit;
+    strcpy(_cuit,cuit.c_str());
 }
 void Proveedor::setNombre(std::string nombre){
     strcpy(_nombre,nombre.c_str());
