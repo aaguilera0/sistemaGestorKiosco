@@ -5,17 +5,24 @@ using namespace std;
 #include "Producto.h"
 
     Producto::Producto() {
-        _IDproducto = 0;
-        _IDCategoria = 0;
+        _idProducto = 0;
+        _idCategoria = 0;
         _stock = 0;
         _precioUnitario = 0.0f;
         _estado = true;
     }
-    int Producto :: getIDProducto(){
-        return _IDproducto;
+    Producto::Producto(int idProducto, int idCategoria, int stock, float precioUnitario, bool estado){
+        setIdProducto(idProducto);
+        setIdCategoria(idCategoria);
+        setStock(stock);
+        setPrecioUnitario(precioUnitario);
+        setEstado(estado);
     }
-    int Producto :: getIDCategoria(){
-        return _IDCategoria;
+    int Producto :: getIdProducto(){
+        return _idProducto;
+    }
+    int Producto :: getIdCategoria(){
+        return _idCategoria;
     }
     int Producto :: getStock(){
         return _stock;
@@ -26,11 +33,11 @@ using namespace std;
     bool Producto :: getEstado(){
         return _estado;
     }
-    void Producto :: setIDProducto(int IDProducto){
-        _IDproducto = IDProducto;
+    void Producto :: setIdProducto(int idProducto){
+        _idProducto = idProducto;
     }
-    void Producto :: setIDCategoria(int IDCategoria){
-        _IDCategoria = IDCategoria;
+    void Producto :: setIdCategoria(int idCategoria){
+        _idCategoria = idCategoria;
     }
     void Producto :: setStock(int stock){
         _stock = stock;
@@ -42,7 +49,7 @@ using namespace std;
         _estado = estado;
     }
     std::string Producto :: toCSV(){
-        return std::to_string(_IDCategoria) + " - " + std::to_string(_IDCategoria) + " - " +
+        return std::to_string(_idProducto) + " - " + std::to_string(_idCategoria) + " - " +
         std::to_string(_stock) + " - " + std::to_string(_precioUnitario)+ " - " + std::to_string(_estado);
     }
 
@@ -50,11 +57,10 @@ using namespace std;
         int idProducto;
         int idCategoria;
         int stock;
-        int precioUnitario;
+        float precioUnitario;
 
         cout << "ID PRODUCTO : " ;
         cin >> idProducto;
-
         cout << "ID CATEGORIA : ";
         cin >> idCategoria;
         cout << "STOCK : " ;
@@ -63,9 +69,8 @@ using namespace std;
         cin >> precioUnitario;
 
         _estado = true;
-        setIDProducto(idProducto);
-        setIDCategoria(idCategoria);
+        setIdProducto(idProducto);
+        setIdCategoria(idCategoria);
         setStock(stock);
         setPrecioUnitario(precioUnitario);
-
     }

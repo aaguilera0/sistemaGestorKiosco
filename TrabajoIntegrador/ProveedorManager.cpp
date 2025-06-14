@@ -91,7 +91,7 @@ void ProveedorManager::modificarProveedor(){
 
             proveedor.setNombre(nuevoNombre);
             proveedor.setApellido(nuevoApellido);
-            proveedor.setTelefono(nuevoTelefono);
+            proveedor.setNumeroTelefono(nuevoTelefono);
             proveedor.setMail(nuevoMail);
             proveedor.setDireccion(nuevaDireccion);
             proveedor.setEstado(nuevoEstado);

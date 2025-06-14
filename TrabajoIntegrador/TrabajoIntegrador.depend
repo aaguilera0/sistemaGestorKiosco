@@ -1,9 +1,13 @@
 # depslib dependency file v1.0
-1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\categoria.cpp
+1749593617 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\categoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
 
 1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\compra.cpp
 
-1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\fecha.cpp
+1749593617 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\fecha.cpp
+	"Fecha.h"
 
 1746906531 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\main.cpp
 	<iostream>
@@ -11,7 +15,10 @@
 
 1746910985 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\menu.h
 
-1746652200 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.cpp
+1749595593 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
 
 1747837919 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
@@ -27,7 +34,7 @@
 	"Funciones.h"
 	<limits>
 
-1747837434 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+1747867423 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
 	"ProveedorArchivo.h"
 
 1747836745 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.cpp
@@ -39,7 +46,7 @@
 1747673779 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.h
 	<string>
 
-1747837426 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
+1747866888 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
 	<string>
 	"Proveedor.h"
 
@@ -49,13 +56,21 @@
 	"RelacionProveedorProducto.h"
 	<cstring>
 
-1747668498 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.h
+1749594342 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.h
 	<string>
 
-1747837445 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+1749595656 source:c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
 	<iostream>
 	"Proveedor.h"
 	"ProveedorArchivo.h"
 	"ProveedorManager.h"
+	<string>
+
+1749593617 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\categoria.h
+
+1749593617 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\fecha.h
+	<string>
+
+1749595402 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.h
 	<string>
 
