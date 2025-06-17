@@ -39,22 +39,23 @@ void menuProveedores(){
 
         case 1:
             system("cls");
-            manager.cargarNuevoProveedor();
+           manager.cargarNuevoProveedor();
             break;
         case 2:
             system("cls");
-            //manager.modificarProveedor();
+            manager.modificarProveedor();
             break;
         case 3:
             system("cls");
-            //manager.eliminarProveedor();
+            manager.eliminarProveedor();
             break;
         case 4:
             system("cls");
-            manager.listarProveedores();
+           manager.listarProveedores();
             break;
         case 5:
             system("cls");
+
             manager.mostrarCantidadRegistros();
             break;
         case 0:

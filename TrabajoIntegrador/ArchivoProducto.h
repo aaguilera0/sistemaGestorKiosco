@@ -6,6 +6,7 @@ class ArchivoProducto{
 private:
     string _nombreArchivo;
 public:
+
         ArchivoProducto(std::string nombreArchivo);
         bool Guardar(Producto producto);
         //bool Guardar(Servicio servicio, int posicion);
@@ -15,6 +16,9 @@ public:
         void Leer(int cantidadRegistros, Producto *vector);
 
         int agregarRegistro(Producto prod);
+        bool listarRegistros();
+        Producto leerRegistro(int posicion);
+        int modificarRegistro(Producto prod, int pos);
 
         /*
         archivoProducto();

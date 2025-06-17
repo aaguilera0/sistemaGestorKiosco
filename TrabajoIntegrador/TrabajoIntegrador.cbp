@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ArchivoCategoria.cpp" />
+		<Unit filename="ArchivoCategoria.h" />
+		<Unit filename="ArchivoProducto.cpp" />
+		<Unit filename="ArchivoProducto.h" />
 		<Unit filename="Categoria.cpp" />
 		<Unit filename="Categoria.h" />
 		<Unit filename="Compra.cpp" />
@@ -44,15 +48,15 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
+		<Unit filename="MenuProducto.cpp" />
+		<Unit filename="MenuProducto.h" />
 		<Unit filename="Producto.cpp" />
 		<Unit filename="Producto.h" />
 		<Unit filename="Proveedor.cpp" />
 		<Unit filename="Proveedor.h" />
-		<Unit filename="ProveedorArchivo.cpp" />
 		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="ProveedorManager.cpp" />
 		<Unit filename="ProveedorManager.h" />
-		<Unit filename="RelacionProveedorProducto.cpp" />
 		<Unit filename="RelacionProveedorProducto.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

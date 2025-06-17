@@ -46,14 +46,17 @@ using namespace std;
         std::to_string(_stock) + " - " + std::to_string(_precioUnitario)+ " - " + std::to_string(_estado);
     }
 
-    void Producto :: cargar(){
+    void Producto :: cargar(int id){
         int idProducto;
         int idCategoria;
         int stock;
         int precioUnitario;
-
-        cout << "ID PRODUCTO : " ;
-        cin >> idProducto;
+        if(id ==0){
+            cout << "ID PRODUCTO : ";
+            cin >> idProducto;
+        }else{
+            _IDproducto = id;
+        }
 
         cout << "ID CATEGORIA : ";
         cin >> idCategoria;
@@ -68,4 +71,10 @@ using namespace std;
         setStock(stock);
         setPrecioUnitario(precioUnitario);
 
+    }
+    void Producto :: mostrar(){
+        cout << "ID PRODUCTO : " << _IDproducto << endl;
+        cout << "ID CATEGORIA : " << _IDCategoria << endl;
+        cout << "STOCK : " << _stock << endl;
+        cout << "PRECIO UNITARIO : " << _precioUnitario << endl;
     }

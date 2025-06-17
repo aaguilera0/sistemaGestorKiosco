@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cctype>
 #include "Menu.h"
+//Updated upstream
 #include "Funciones.h"
+
+#include "MenuProducto.h"
+// Stashed changes
 #include <limits>
 using namespace std;
 
@@ -34,7 +38,12 @@ void Menu::mostrarMenuPrincipal()
 
         case 1:
             system("cls");
-            //menuProductos();
+// Updated upstream
+            menuProductos();
+
+            MenuProducto menu;
+            menu.mostrarMenuProducto();
+//Stashed changes
             break;
         case 2:
             system("cls");
@@ -42,7 +51,7 @@ void Menu::mostrarMenuPrincipal()
             break;
         case 3:
             system("cls");
-            //menuCompras();
+            menuCompras();
             break;
         case 0:
             system("cls");

@@ -36,6 +36,8 @@
 
 1746907548 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\funciones.h
 
+1746907548 ated upstream
+
 1747673779 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\proveedor.h
 	<string>
 
@@ -58,4 +60,107 @@
 	"ProveedorArchivo.h"
 	"ProveedorManager.h"
 	<string>
+
+1747837445 Manager.h"
+
+1747515511 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+
+1749420531 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.cpp
+	<iostream>
+	<cstring>
+
+1747597232 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\fecha.cpp
+	"Fecha.h"
+
+1746910839 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\main.cpp
+	<iostream>
+	"Menu.h"
+
+1749148818 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.h
+
+1749420953 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
+	<iostream>
+	<cctype>
+	"Menu.h"
+	"Funciones.h"
+	"MenuProducto.h"
+	<limits>
+
+1749430003 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+
+1749420512 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+	"Proveedor.h"
+	<cstring>
+
+1747515522 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.h
+
+1747597398 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\fecha.h
+	<string>
+
+1747597414 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+	"ArchivoCategoria.h"
+	"Compra.h"
+
+1747597405 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.h
+
+1746910616 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.h
+
+1749429781 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.h
+	<string>
+
+1749430201 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+	"ArchivoProducto.h"
+
+1749428719 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.h
+	"Producto.h"
+
+1749430296 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menuproducto.cpp
+	<iostream>
+	<cctype>
+	"MenuProducto.h"
+	"Menu.h"
+	"Producto.h"
+	"ArchivoProducto.h"
+	<limits>
+
+1750109508 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menuproducto.h
+
+1749167097 shed changes
+
+1749425393 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
+	"Funciones.h"
+	"Menu.h"
+	"ProveedorManager.h"
+	<iostream>
+	<limits>
+
+1746910839 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.h
+
+1749420512 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedormanager.h
+
+1749420512 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedor.h
+	<string>
+
+1749421053 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+	<iostream>
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+	"ProveedorManager.h"
+	<string>
+
+1749420512 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
+	<string>
+	"Proveedor.h"
 
