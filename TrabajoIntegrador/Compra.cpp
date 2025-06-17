@@ -41,3 +41,4 @@ void Compra::setFechaCompra(int dia, int mes, int anio) {
 void Compra::setImporte(float importe) {
     _importe = importe;
 }
+

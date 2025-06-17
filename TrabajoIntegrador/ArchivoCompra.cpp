@@ -131,3 +131,10 @@ bool ArchivoCompra::Buscar(std::string cuitProveedor, Compra& compraEncontrada) 
     fclose(pArchivo);
     return false;
 }
+int ArchivoCompra::ObtenerUltimoId() {
+    int cantidad = CantidadRegistros();
+    if (cantidad == 0) return 0;
+
+    Compra ultimaCompra = Leer(cantidad - 1);
+    return ultimaCompra.getIdCompra();
+}

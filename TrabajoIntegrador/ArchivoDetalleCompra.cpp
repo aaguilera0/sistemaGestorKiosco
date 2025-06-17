@@ -98,3 +98,10 @@ bool archivoDetalleCompra::BuscarPorIdCompra(int cantidadRegistros, DetalleCompr
     fclose(pArchivo);
     return (aux > 0);
 }
+int archivoDetalleCompra::ObtenerUltimoId() {
+    int cantidad = CantidadRegistros();
+    if (cantidad == 0) return 0;
+
+    DetalleCompra ultimoDetalle = Leer(cantidad - 1);
+    return ultimoDetalle.getIdDetalle();
+}

@@ -20,6 +20,7 @@ public:
     Compra Leer(int posicion);
     int CantidadRegistros();
     void Leer(int cantidadRegistros, Compra* vector);
+    int ObtenerUltimoId();
 };
 
 #endif // ARCHIVOCOMPRA_H_INCLUDED

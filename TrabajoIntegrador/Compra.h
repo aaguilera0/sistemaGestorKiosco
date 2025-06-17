@@ -25,6 +25,7 @@ public:
     void setCuitProveedor(string cuit);
     void setFechaCompra(int dia, int mes, int anio);
     void setImporte(float importe);
+
 };
 
 #endif

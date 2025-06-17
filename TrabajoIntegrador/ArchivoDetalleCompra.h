@@ -18,6 +18,7 @@ public:
     void Leer(int cantidadRegistros, DetalleCompra *vector);
     bool Buscar(int IdDetalle, DetalleCompra& detalleCompraEncontrada);
     bool BuscarPorIdCompra(int cantidadRegistros,  DetalleCompra *vector,  int IdCompra);
+    int ObtenerUltimoId();
 };
 
 #endif // ARCHIVODETALLECOMPRA_H_INCLUDED
