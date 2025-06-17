@@ -57,7 +57,6 @@
 		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="ProveedorManager.cpp" />
 		<Unit filename="ProveedorManager.h" />
-		<Unit filename="RelacionProveedorProducto.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

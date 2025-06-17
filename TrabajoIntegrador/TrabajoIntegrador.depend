@@ -68,7 +68,7 @@
 	<cstring>
 	"Categoria.h"
 
-1749420531 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.cpp
+1750200369 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.cpp
 	<iostream>
 	<cstring>
 
@@ -81,7 +81,7 @@
 
 1749148818 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.h
 
-1749420953 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
+1750199873 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
 	<iostream>
 	<cctype>
 	"Menu.h"
@@ -89,7 +89,7 @@
 	"MenuProducto.h"
 	<limits>
 
-1749430003 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.cpp
+1750200369 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.cpp
 	<iostream>
 	<cstring>
 	"Producto.h"
@@ -112,12 +112,12 @@
 
 1747597405 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.h
 
-1746910616 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.h
+1750200369 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.h
 
-1749429781 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.h
+1750200369 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.h
 	<string>
 
-1749430201 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
+1750200369 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
 	<iostream>
 	<cstring>
 	"Producto.h"
@@ -126,7 +126,7 @@
 1749428719 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.h
 	"Producto.h"
 
-1749430296 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menuproducto.cpp
+1750110304 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menuproducto.cpp
 	<iostream>
 	<cctype>
 	"MenuProducto.h"
@@ -139,7 +139,7 @@
 
 1749167097 shed changes
 
-1749425393 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1750199686 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
 	"Menu.h"
 	"ProveedorManager.h"
