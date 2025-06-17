@@ -35,7 +35,7 @@ void ProveedorManager::cargarNuevoProveedor(){
     cout << "INGRESE DIRECCION: " << endl;
     getline(cin, direccion);
 
-    cout << "¨SU ESTADO ES ACTIVO? 1- SI 0- NO: " << endl;
+    cout << "ï¿½SU ESTADO ES ACTIVO? 1- SI 0- NO: " << endl;
     cin >> estado;
 
     proveedor = Proveedor(cuit, nombre, apellido, numTelefono, mail, direccion, estado);
@@ -91,7 +91,11 @@ void ProveedorManager::modificarProveedor(){
 
             proveedor.setNombre(nuevoNombre);
             proveedor.setApellido(nuevoApellido);
-            //proveedor.setTelefono(nuevoTelefono);
+//<<<<<<< HEAD
+            proveedor.setNumeroTelefono(nuevoTelefono);
+//=======
+            proveedor.setNumeroTelefono(nuevoTelefono);
+//>>>>>>> 1ebef20bec1b1744a16d72ddb8679f74737cf90c
             proveedor.setMail(nuevoMail);
             proveedor.setDireccion(nuevaDireccion);
             proveedor.setEstado(nuevoEstado);

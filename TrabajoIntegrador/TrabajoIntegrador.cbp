@@ -34,14 +34,22 @@
 		</Compiler>
 		<Unit filename="ArchivoCategoria.cpp" />
 		<Unit filename="ArchivoCategoria.h" />
+		<Unit filename="ArchivoCompra.cpp" />
+		<Unit filename="ArchivoCompra.h" />
+		<Unit filename="ArchivoDetalleCompra.cpp" />
+		<Unit filename="ArchivoDetalleCompra.h" />
 		<Unit filename="ArchivoProducto.cpp" />
 		<Unit filename="ArchivoProducto.h" />
 		<Unit filename="Categoria.cpp" />
 		<Unit filename="Categoria.h" />
 		<Unit filename="Compra.cpp" />
-		<Unit filename="Compra.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Compra.h" />
+		<Unit filename="CompraManager.cpp" />
+		<Unit filename="CompraManager.h" />
+		<Unit filename="DetalleCompra.cpp" />
+		<Unit filename="DetalleCompra.h" />
+		<Unit filename="DetalleCompraManager.cpp" />
+		<Unit filename="DetalleCompraManager.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Funciones.cpp" />
@@ -57,6 +65,11 @@
 		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="ProveedorManager.cpp" />
 		<Unit filename="ProveedorManager.h" />
+		<Unit filename="RelacionProveedorProducto.cpp" />
+		<Unit filename="RelacionProveedorProducto.h" />
+		<Unit filename="TrabajoIntegrador.cbp" />
+		<Unit filename="TrabajoIntegrador.depend" />
+		<Unit filename="TrabajoIntegrador.layout" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
