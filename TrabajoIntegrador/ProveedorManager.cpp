@@ -114,6 +114,26 @@ void ProveedorManager::modificarProveedor(){
         cout << "NO SE ENCONTRO NINGUN PROVEEDOR CON ESE CUIT." << endl;
     }
 }
+void ProveedorManager::eliminarProveedor(){
+    ProveedorArchivo archivo("proveedores.dat");
+    int cuit;
+    cout << "Ingrese CUIT del proveedor a eliminar: ";
+    cin >> cuit;
+
+    Proveedor proveedor;
+    if (archivo.Buscar(cuit, proveedor)) {
+        // Simulamos eliminacion logica con ID producto -1
+        proveedor.setCuit(-1);
+        //int pos = archivo.Buscar(id);
+        if (archivo.Guardar(proveedor, proveedor.getCuit())) {
+            cout << "Proveedor eliminado logicamente." << endl;
+        } else {
+            cout << "No se pudo eliminar el proveedor." << endl;
+        }
+    } else {
+        cout << "Proveedor no encontrado." << endl;
+    }
+}
 void ProveedorManager::mostrarCantidadRegistros(){
     ProveedorArchivo pArchivo;
 
