@@ -1,11 +1,23 @@
 #include "DetalleCompra.h"
-DetalleCompra::DetalleCompra(int idDetalle=0, int IdCompra=0, int IdProducto=0, int cantidad=0, float precioUnitario=0){
-setIdDetalle(idDetalle);
-setIdCompra(IdCompra);
-setIdProducto(IdProducto);
-setCantidad(cantidad);
-setPrecioUnitario(precioUnitario);
+
+// Constructor por defecto
+DetalleCompra::DetalleCompra() {
+    _idDetalle = 0;
+    _idCompra = 0;
+    _idProducto = 0;
+    _cantidad = 0;
+    _precioUnitario = 0.0f;
 }
+
+// Constructor con parámetros
+DetalleCompra::DetalleCompra(int idDetalle, int idCompra, int idProducto, int cantidad, float precioUnitario){
+    setIdDetalle(idDetalle);
+    setIdCompra(idCompra);
+    setIdProducto(idProducto);
+    setCantidad(cantidad);
+    setPrecioUnitario(precioUnitario);
+}
+
 // Getters
 int DetalleCompra::getIdDetalle() {
     return _idDetalle;
@@ -23,7 +35,7 @@ int DetalleCompra::getCantidad() {
     return _cantidad;
 }
 
-float DetalleCompra::getPrecioUnitario() {
+float DetalleCompra::getPrecio() {
     return _precioUnitario;
 }
 
@@ -44,6 +56,6 @@ void DetalleCompra::setCantidad(int cantidad) {
     _cantidad = cantidad;
 }
 
-void DetalleCompra::setPrecioUnitario(float precio) {
-    _precioUnitario = precio;
+void DetalleCompra::setPrecioUnitario(float precioUnitario) {
+    _precioUnitario = precioUnitario;
 }

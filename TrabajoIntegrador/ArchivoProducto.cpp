@@ -39,7 +39,7 @@ int ArchivoProducto :: Buscar(int IDProducto){
     Producto producto;
     int i = 0;
     while(fread(&producto, sizeof(Producto), 1, pArchivo)){
-        if(producto.getIDProducto() == IDProducto){
+        if(producto.getIdProducto() == IDProducto){
             fclose(pArchivo);
             return i;
         }

@@ -74,3 +74,125 @@
 1749595402 c:\users\estudio\desktop\utn\programacion ii 2025\sistemagestorkiosco\trabajointegrador\producto.h
 	<string>
 
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\categoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\categoria.h
+
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.cpp
+	"Fecha.h"
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.h
+	<string>
+
+1747690838 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\main.cpp
+	<iostream>
+	"Menu.h"
+
+1747690838 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\menu.h
+
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\menu.cpp
+	<iostream>
+	<cctype>
+	"Menu.h"
+	"Funciones.h"
+	<limits>
+
+1747690838 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.h
+
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+	"Proveedor.h"
+	<cstring>
+
+1747690838 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedor.h
+	<string>
+
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+	"ProveedorArchivo.h"
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
+	<string>
+	"Proveedor.h"
+
+1750079178 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\compra.cpp
+	"Compra.h"
+
+1750079178 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\compra.h
+	"Fecha.h"
+	<cstring>
+	<string>
+
+1750122755 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
+	"Funciones.h"
+	"Menu.h"
+	"ProveedorManager.h"
+	<iostream>
+	<limits>
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.h
+
+1750122761 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+
+1750122761 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.h
+	<string>
+
+1750122761 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+	<iostream>
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+	"ProveedorManager.h"
+	<string>
+
+1750122761 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.cpp
+	"RelacionProveedorProducto.h"
+	<cstring>
+
+1750122761 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.h
+	<string>
+
+1749609991 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivocategoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+	"ArchivoCategoria.h"
+	"Compra.h"
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivocategoria.h
+
+1750079608 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivocompra.cpp
+	"ArchivoCompra.h"
+	<cstdio>
+
+1750078691 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivocompra.h
+	<string>
+	"Compra.h"
+	"Fecha.h"
+
+1750080087 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivodetallecompra.cpp
+	"archivoDetalleCompra.h"
+	<cstdio>
+
+1750080087 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivodetallecompra.h
+	<string>
+	"DetalleCompra.h"
+
+1750080087 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\detallecompra.h
+	<string>
+
+1750080087 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\detallecompra.cpp
+	"DetalleCompra.h"
+
+1750124495 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+	"ArchivoProducto.h"
+
+1749609991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.h
+	"Producto.h"
+

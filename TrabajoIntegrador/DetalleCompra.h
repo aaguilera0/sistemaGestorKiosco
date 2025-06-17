@@ -1,6 +1,9 @@
 #ifndef DETALLECOMPRA_H
 #define DETALLECOMPRA_H
 
+#include <string>
+using namespace std;
+
 class DetalleCompra {
 private:
     int _idDetalle;
@@ -10,19 +13,22 @@ private:
     float _precioUnitario;
 
 public:
-    DetalleCompra(int idDetalle=0, int IdCompra=0, int IdProducto=0, int cantidad=0, float precioUnitario=0);
+    DetalleCompra(); // Constructor por defecto
+    DetalleCompra(int idDetalle, int idCompra, int idProducto, int cantidad, float precioUnitario);
+
     // Getters
     int getIdDetalle();
     int getIdCompra();
     int getIdProducto();
     int getCantidad();
-    float getPrecioUnitario();
+    float getPrecio();
+
     // Setters
     void setIdDetalle(int idDetalle);
     void setIdCompra(int idCompra);
     void setIdProducto(int idProducto);
     void setCantidad(int cantidad);
-    void setPrecioUnitario(float precio);
+    void setPrecioUnitario(float precioUnitario);
 };
 
-#endif
+#endif // DETALLECOMPRA_H

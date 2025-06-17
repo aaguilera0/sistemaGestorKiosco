@@ -5,6 +5,9 @@ setCuitProveedor(cuitProveedor);
 setImporte(importe);
 setFechaCompra(dia,mes,anio);
 }
+Compra::Compra(){
+
+}
 // Getters
 int Compra::getIdCompra() {
     return _idCompra;

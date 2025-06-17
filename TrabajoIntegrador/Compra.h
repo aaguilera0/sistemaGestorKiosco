@@ -13,6 +13,7 @@ private:
     Fecha _fechaCompra;
 
 public:
+    Compra();
     Compra(int idCompra, string cuitProveedor, float importe, int dia, int mes, int ani);
     // Getters
     int getIdCompra();
