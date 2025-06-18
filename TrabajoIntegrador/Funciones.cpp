@@ -1,6 +1,7 @@
 #include "Funciones.h"
 #include "Menu.h"
 #include "ProveedorManager.h"
+#include "ProductoManager.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -52,6 +53,68 @@ void menuProveedores(){
         case 4:
             system("cls");
             manager.listarProveedores();
+            break;
+        case 5:
+            system("cls");
+            manager.mostrarCantidadRegistros();
+            break;
+        case 0:
+            system("cls");
+            cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
+            return;
+        default:
+            cout << "TE EQUIVOCASTE GIL. INTENTA NUEVAMENTE, POR FAVOR." << endl;
+            return;
+        }
+}while(true);
+}
+void menuProducto(){
+    int opc;
+    ProductoManager manager;
+
+    system("cls");
+
+    do
+    {
+        cout << "====================================" << endl;
+        cout << "          MAXIKIOSCO LAMINE         " << endl;
+        cout << "====================================" << endl;
+        cout << endl;
+        cout << "--------- MENU PRODUCTO ---------" << endl;
+        cout << endl;
+        cout << "1- AGREGAR PRODUCTO" << endl;
+        cout << "2- MODIFICAR PRODUCTO" << endl;
+        cout << "3- ELIMINAR PRODUCTO" << endl;
+        cout << "4- LISTAR PRODUCTOS" << endl;
+        cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
+        cout << "0- SALIR" << endl;
+        cin >> opc;
+        if (cin.fail())
+        {
+            cin.clear(); // Limpia el error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta entrada inv lida
+            cout << "Error: Solo se permiten numeros.\n";
+            continue;
+        }
+
+        switch(opc)
+        {
+
+        case 1:
+            system("cls");
+            manager.cargarNuevoProducto();
+            break;
+        case 2:
+            system("cls");
+            manager.modificarProducto();
+            break;
+        case 3:
+            system("cls");
+            manager.eliminarProducto();
+            break;
+        case 4:
+            system("cls");
+            manager.listarProductos();
             break;
         case 5:
             system("cls");

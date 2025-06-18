@@ -5,92 +5,91 @@ using namespace std;
 #include "Producto.h"
 #include "ArchivoProducto.h"
 
-
-ArchivoProducto :: ArchivoProducto(std::string nombreArchivo){
+ArchivoProducto::ArchivoProducto(){
+    _nombreArchivo = "productos.dat";
+}
+ArchivoProducto::ArchivoProducto(std::string nombreArchivo){
     _nombreArchivo = nombreArchivo;
 }
+bool ArchivoProducto::guardar(Producto registro){
+    FILE *pFile;
+    bool resultado;
 
-bool ArchivoProducto :: Guardar(Producto producto){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
-    if(pArchivo == NULL){
+    pFile = fopen(_nombreArchivo.c_str(),"ab");
+
+    if(pFile==nullptr){
         return false;
     }
-    bool ok = fwrite(&producto, sizeof(Producto), 1, pArchivo);
-    fclose(pArchivo);
-    return ok;
-}
 
-/*bool ArchivoCategoria::Guardar(Categoria categoria, int posicion){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-    if(pArchivo == NULL){
+    resultado = fwrite(&registro, sizeof(Producto),1,pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}
+bool ArchivoProducto::guardar(Producto registro, int posicion){
+    FILE *pFile;
+    bool resultado;
+
+    pFile = fopen(_nombreArchivo.c_str(),"rb+");
+
+    if(pFile == nullptr){
         return false;
     }
-    fseek(pArchivo, sizeof(Categoria) * posicion, SEEK_SET);
-    bool ok = fwrite(&categoria, sizeof(Categoria), 1, pArchivo);
-    fclose(pArchivo);
-    return ok;
-}*/
 
-int ArchivoProducto :: Buscar(int IDProducto){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return -1;
-    }
-    Producto producto;
-    int i = 0;
-    while(fread(&producto, sizeof(Producto), 1, pArchivo)){
-        if(producto.getIdProducto() == IDProducto){
-            fclose(pArchivo);
-            return i;
-        }
-        i++;
-    }
-    fclose(pArchivo);
-    return -1;
+    fseek(pFile, posicion * sizeof(Producto), SEEK_SET);
+
+    resultado = fwrite(&registro,sizeof(Producto),1,pFile);
+
+    fclose(pFile);
+
+    return resultado;
 }
+int ArchivoProducto::getCantidadRegistros(){
+    FILE *pFile;
+    int cantidad, total;
 
-/*Compra ArchivoCategoria::Leer(int posicion){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return Categoria();
-    }
-    Categoria categoria;
-    fseek(pArchivo, sizeof(Categoria) * posicion, SEEK_SET);
-    fread(&categoria, sizeof(Categoria), 1, pArchivo);
-    fclose(pArchivo);
-    return categoria;
-}*/
+    pFile = fopen(_nombreArchivo.c_str(),"rb");
 
-int ArchivoProducto :: CantidadRegistros(){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
+    if(pFile==nullptr){
         return 0;
     }
-    fseek(pArchivo, 0, SEEK_END);
-    int cantidadRegistros = ftell(pArchivo) / sizeof(Producto);
-    fclose(pArchivo);
-    return cantidadRegistros;
+
+    fseek(pFile,0,SEEK_END);
+
+    total = ftell(pFile);
+
+    cantidad = total / sizeof(Producto);
+
+    fclose(pFile);
+
+    return cantidad;
 }
+Producto ArchivoProducto::leer(int pos){
+    FILE *pFile;
+    Producto reg;
 
-void ArchivoProducto :: Leer(int cantidadRegistros, Producto *vector){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return;
+    pFile = fopen(_nombreArchivo.c_str(),"rb");
+
+    if(pFile==nullptr){
+        return reg;
     }
-    for(int i = 0; i < cantidadRegistros; i++){
-        fread(&vector[i], sizeof(Producto), 1, pArchivo);
-    }
-    fclose(pArchivo);
+
+    fseek(pFile,sizeof(Producto)*pos,SEEK_SET);
+    fread(&reg,sizeof(Producto),1,pFile);
+
+    fclose(pFile);
+
+    return reg;
 }
-int ArchivoProducto :: agregarRegistro(Producto prod){
-
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "ab");
-    if(pArchivo==nullptr){
-        return -1;
+int ArchivoProducto::buscarPorID(int idBuscado) {
+    Producto prod;
+    int cantidad = getCantidadRegistros();
+    for(int i = 0; i < cantidad; i++) {
+        prod = leer(i);
+        if(prod.getIdProducto() == idBuscado ) {
+            return i;
+        }
     }
-    int escribio = fwrite(&prod, sizeof(Producto),1,pArchivo);
-    fclose(pArchivo);
-    return escribio;
+    return -1;
 }

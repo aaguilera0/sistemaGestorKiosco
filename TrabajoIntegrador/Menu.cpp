@@ -42,7 +42,7 @@ void Menu::mostrarMenuPrincipal()
                 cout << "Gestion de proveedores y sus productos..." << endl;
                 break;
             case 4:
-                // gestionProductosYCategorias();
+                menuProducto();
                 cout << "Gestion de productos y categorias..." << endl;
                 break;
             case 5:
