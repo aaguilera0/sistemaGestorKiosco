@@ -1,65 +1,69 @@
 #include <iostream>
 #include <cctype>
 #include "Menu.h"
-//Updated upstream
 #include "Funciones.h"
-
-#include "MenuProducto.h"
-// Stashed changes
+#include "CompraManager.h"
 #include <limits>
 using namespace std;
-
+CompraManager compraManager;
 void Menu::mostrarMenuPrincipal()
 {
-    int opc;
+    int opcion;
 
-    system("cls");
+    do {
+        cout << "===============================" << endl;
+        cout << "     SISTEMA DE COMPRAS        " << endl;
+        cout << "===============================" << endl;
+        cout << "[1] Registrar nueva compra" << endl;
+        cout << "[2] Ver compras realizadas" << endl;
+        cout << "[3] Gestion de proveedores y sus productos" << endl;
+        cout << "[4] Gestion de productos y categorias" << endl;
+        cout << "[5] Configuraciones e informes" << endl;
+        cout << "[0] Salir" << endl;
+        cout << "-------------------------------" << endl;
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+        system("cls"); // o "clear" en Linux/Mac
 
-    do
-    {
-        cout << "===================================" << endl;
-        cout << "          MAXIKIOSCO LAMINE        " << endl;
-        cout << "===================================" << endl;
-        cout << "1- PRODUCTOS" << endl;
-        cout << "2- PROVEEDORES" << endl;
-        cout << "3- COMPRAS" << endl;
-        cout << "0- SALIR" << endl;
-        cin >> opc;
-        if (cin.fail())
-        {
-            cin.clear(); // Limpia el error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta entrada inv lida
-            cout << "Error: Solo se permiten n£meros.\n";
-            continue;
+        switch (opcion) {
+            case 1:
+                // registrarNuevaCompra();
+                cout << "Registrar nueva compra..." << endl;
+                compraManager.cargarNuevaCompra();
+                break;
+            case 2:
+                // verComprasRealizadas();
+
+                cout << "Ver compras realizadas..." << endl;
+                compraManager.listarCompras();
+                break;
+            case 3:
+                // gestionProveedores();
+                cout << "Gestion de proveedores y sus productos..." << endl;
+                break;
+            case 4:
+                // gestionProductosYCategorias();
+                cout << "Gestion de productos y categorias..." << endl;
+                break;
+            case 5:
+                // configuracionesEInformes();
+                cout << "Configuraciones e informes..." << endl;
+                break;
+            case 0:
+                cout << "Saliendo del sistema..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+                break;
         }
 
-        switch(opc)
-        {
-
-        case 1:
+        if (opcion != 0) {
+            cout << "\nPresione una tecla para continuar...";
+            cin.ignore();
+            cin.get();
             system("cls");
-// Updated upstream
-            menuProductos();
-
-            MenuProducto menu;
-            menu.mostrarMenuProducto();
-//Stashed changes
-            break;
-        case 2:
-            system("cls");
-            menuProveedores();
-            break;
-        case 3:
-            system("cls");
-            menuCompras();
-            break;
-        case 0:
-            system("cls");
-            cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
-            return;
-        default:
-            cout << "TE EQUIVOCASTE GIL. INTENTA NUEVAMENTE, POR FAVOR." << endl;
-            return;
         }
-}while(true);
+
+    } while (opcion != 0);
 }
+

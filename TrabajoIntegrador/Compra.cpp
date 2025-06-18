@@ -1,12 +1,3 @@
-//<<<<<<< HEAD
-#include <iostream>
-#include <cstring>
-using namespace std;
-#pragma once
-
-class Compra{
-};
-//=======
 #include "Compra.h"
 Compra::Compra(int idCompra, string cuitProveedor, float importe, int dia, int mes, int anio){
 setIdCompra(idCompra);
@@ -51,4 +42,3 @@ void Compra::setImporte(float importe) {
     _importe = importe;
 }
 
-//>>>>>>> 1ebef20bec1b1744a16d72ddb8679f74737cf90c

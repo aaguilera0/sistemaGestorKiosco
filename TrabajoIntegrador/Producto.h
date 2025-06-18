@@ -28,8 +28,7 @@ public:
 
     string toCSV();
 
-    void cargar(int id=0);
-    void mostrar();
+    void cargar();
 };
 
 #endif // PRODUCTO_H_INCLUDED
