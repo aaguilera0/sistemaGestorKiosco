@@ -40,6 +40,8 @@
 		<Unit filename="ArchivoDetalleCompra.h" />
 		<Unit filename="ArchivoProducto.cpp" />
 		<Unit filename="ArchivoProducto.h" />
+		<Unit filename="ArchivoProveedorProducto.cpp" />
+		<Unit filename="ArchivoProveedorProducto.h" />
 		<Unit filename="Categoria.cpp" />
 		<Unit filename="Categoria.h" />
 		<Unit filename="Compra.cpp" />
@@ -69,7 +71,9 @@
 		<Unit filename="TrabajoIntegrador.cbp" />
 		<Unit filename="TrabajoIntegrador.depend" />
 		<Unit filename="TrabajoIntegrador.layout" />
+		<Unit filename="compras.dat" />
 		<Unit filename="main.cpp" />
+		<Unit filename="productos.dat" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
