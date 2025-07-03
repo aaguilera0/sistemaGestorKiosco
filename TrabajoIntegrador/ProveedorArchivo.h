@@ -13,4 +13,5 @@ class ProveedorArchivo{
         bool guardar(Proveedor registro, int posicion);
         int getCantidadRegistros();
         Proveedor leer(int pos);
+        bool Buscar(std::string cuitProveedor,Proveedor& Proveedor);
 };

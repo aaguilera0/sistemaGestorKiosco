@@ -25,6 +25,7 @@ void menuProveedores(){
         cout << "3- ELIMINAR PROVEEDORES" << endl;
         cout << "4- LISTAR PROVEEDORES" << endl;
         cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
+        cout << "6- SELECCIONAR UN PROVEEDOR" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -57,6 +58,12 @@ void menuProveedores(){
         case 5:
             system("cls");
             manager.mostrarCantidadRegistros();
+            break;
+        case 6:
+            system("cls");
+            //buscamos el proveedor
+            manager.BuscarProveedorPorCuit();
+
             break;
         case 0:
             system("cls");

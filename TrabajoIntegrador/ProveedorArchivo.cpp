@@ -77,3 +77,20 @@ Proveedor ProveedorArchivo::leer(int pos){
 
     return reg;
 }
+bool ProveedorArchivo::Buscar(std::string cuitProveedor, Proveedor& proveedorEncontrado) {
+    FILE* pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    if (pArchivo == NULL) {
+        return false;
+    }
+
+    Proveedor proveedor1;
+    while (fread(&proveedor1, sizeof(Proveedor), 1, pArchivo)) {
+        if (proveedor1.getCuit() == cuitProveedor) {
+            fclose(pArchivo);
+            proveedorEncontrado = proveedor1;
+            return true;
+        }
+    }
+    fclose(pArchivo);
+    return false;
+}
