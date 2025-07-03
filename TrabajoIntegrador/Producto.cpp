@@ -48,17 +48,27 @@ using namespace std;
     void Producto :: setEstado(bool estado){
         _estado = estado;
     }
+    void Producto::setNombre(std::string nombre) {
+    strcpy(_nombre, nombre.c_str());
+}
     std::string Producto :: toCSV(){
-        return std::to_string(_idProducto) + " - " + std::to_string(_idCategoria) + " - " +
-        std::to_string(_stock) + " - " + std::to_string(_precioUnitario)+ " - " + std::to_string(_estado);
+        return "ID PRODUCTO : " + std::to_string(_idProducto) + " || " + "NOMBRE PRODUCTO : " + std::string(_nombre) + " || " +
+         "ID CATEGORIA : " + std::to_string(_idCategoria) + " || " +
+        "STOCK : " + std::to_string(_stock) + " || " + "PRECIO : " + std::to_string(_precioUnitario);
     }
 
-    void Producto :: cargar(){
+    void Producto :: cargar(int id){
         int idProducto;
         int idCategoria;
         int stock;
         float precioUnitario;
 
+        if(id ==0){
+            cout << "ID PRODUCTO : ";
+            cin >> idProducto;
+        }else{
+            _idProducto = id;
+        }
         cout << "ID PRODUCTO : " ;
         cin >> idProducto;
         cout << "ID CATEGORIA : ";
@@ -73,4 +83,10 @@ using namespace std;
         setIdCategoria(idCategoria);
         setStock(stock);
         setPrecioUnitario(precioUnitario);
+    }
+    void Producto :: mostrar(){
+        cout << "ID PRODUCTO : " << _idProducto << endl;
+        cout << "ID CATEGORIA : " << _idCategoria << endl;
+        cout << "STOCK : " << _stock << endl;
+        cout << "PRECIO UNITARIO : " << _precioUnitario << endl;
     }

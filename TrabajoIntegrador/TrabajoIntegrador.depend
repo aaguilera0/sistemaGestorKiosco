@@ -213,3 +213,152 @@
 	"DetalleCompra.h"
 	"archivoDetalleCompra.h"
 
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+	"ArchivoCategoria.h"
+	"Compra.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.h
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.h
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.h
+	"Fecha.h"
+	<cstring>
+	<string>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\fecha.h
+	<string>
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocompra.cpp
+	"ArchivoCompra.h"
+	<cstdio>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocompra.h
+	<string>
+	"Compra.h"
+	"Fecha.h"
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivodetallecompra.cpp
+	"archivoDetalleCompra.h"
+	<cstdio>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivodetallecompra.h
+	<string>
+	"DetalleCompra.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\detallecompra.h
+	<string>
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.cpp
+	<iostream>
+	<cstring>
+	"Categoria.h"
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compramanager.cpp
+	<iostream>
+	"CompraManager.h"
+	"Compra.h"
+	"ArchivoCompra.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compramanager.h
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\detallecompra.cpp
+	"DetalleCompra.h"
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\detallecompramanager.cpp
+	<iostream>
+	"DetalleCompraManager.h"
+	"DetalleCompra.h"
+	"archivoDetalleCompra.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\detallecompramanager.h
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\fecha.cpp
+	"Fecha.h"
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\main.cpp
+	<iostream>
+	"Menu.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.h
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedor.cpp
+	"Proveedor.h"
+	<cstring>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedor.h
+	<string>
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.cpp
+	"RelacionProveedorProducto.h"
+	<cstring>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\relacionproveedorproducto.h
+	<string>
+
+1750219373 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+	"ArchivoProducto.h"
+
+1750217547 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.h
+	<string>
+
+1750219111 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivoproducto.h
+	"Producto.h"
+
+1750245371 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.cpp
+	"Compra.h"
+
+1750245371 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
+	<iostream>
+	<cctype>
+	"Menu.h"
+	"Funciones.h"
+	"CompraManager.h"
+	<limits>
+
+1750246261 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.h
+
+1750218521 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.cpp
+	<iostream>
+	<cstring>
+	"Producto.h"
+
+1750246426 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.cpp
+	<iostream>
+	"Producto.h"
+	"ArchivoProducto.h"
+	"ProductoManager.h"
+	<string>
+
+1750216630 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.h
+
+1750221126 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
+	"ProveedorArchivo.h"
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedorarchivo.h
+	<string>
+	"Proveedor.h"
+
+1750245371 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+	<iostream>
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+	"ProveedorManager.h"
+	<string>
+
+1750221126 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedormanager.h
+
+1750246279 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
+	"Funciones.h"
+	"Menu.h"
+	"ProveedorManager.h"
+	"ProductoManager.h"
+	<iostream>
+	<limits>
+

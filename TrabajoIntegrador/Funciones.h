@@ -1,5 +1,5 @@
 #pragma once
 
-void menuProductos();
+void menuProducto();
 void menuProveedores();
 void menuCompras();
