@@ -27,7 +27,7 @@ int ProductoManager :: cargarNuevoProducto()
     int pos = pArchivo.buscarPorID(idProducto);
     if(pos >= 0) { // Ya existe un producto con ese ID
         cout << "ERROR: Ya existe un producto con ese ID." << endl;
-        return -1; // No continúa el guardado
+        return -1; // No continï¿½a el guardado
     }
 
     cout << "NOMBRE DE PRODUCTO :" ;
@@ -133,7 +133,7 @@ void ProductoManager::modificarProducto(){
     }
 
     if(!encontrado){
-        cout << "NO SE ENCONTRO NINGUN PROVEEDOR CON ESE CUIT." << endl;
+        cout << "NO SE ENCONTRO NINGUN PRODUCTO CON ESE ID." << endl;
     }
 }
 void ProductoManager :: eliminarProducto(){
