@@ -213,16 +213,17 @@
 	"DetalleCompra.h"
 	"archivoDetalleCompra.h"
 
-1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.cpp
+1752187672 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.cpp
 	<iostream>
 	<cstring>
 	"Categoria.h"
 	"ArchivoCategoria.h"
 	"Compra.h"
 
-1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.h
+1752189404 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.h
 
-1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.h
+1752187452 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\archivocategoria.h
+	"Categoria.h"
 
 1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.h
 	"Fecha.h"
@@ -252,7 +253,7 @@
 1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\detallecompra.h
 	<string>
 
-1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.cpp
+1752189410 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\categoria.cpp
 	<iostream>
 	<cstring>
 	"Categoria.h"
@@ -314,7 +315,7 @@
 1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\compra.cpp
 	"Compra.h"
 
-1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
+1752199014 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\menu.cpp
 	<iostream>
 	<cctype>
 	"Menu.h"
@@ -322,21 +323,23 @@
 	"CompraManager.h"
 	<limits>
 
-1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.h
+1751930776 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.h
 
 1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\producto.cpp
 	<iostream>
 	<cstring>
 	"Producto.h"
 
-1750246426 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.cpp
+1752196986 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.cpp
 	<iostream>
 	"Producto.h"
+	"Categoria.h"
+	"ArchivoCategoria.h"
 	"ArchivoProducto.h"
 	"ProductoManager.h"
 	<string>
 
-1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.h
+1752196991 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\productomanager.h
 
 1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedorarchivo.cpp
 	"ProveedorArchivo.h"
@@ -354,7 +357,7 @@
 
 1751927901 c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\proveedormanager.h
 
-1751927901 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1752191167 source:c:\users\mateopisano\desktop\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
 	"Menu.h"
 	"ProveedorManager.h"

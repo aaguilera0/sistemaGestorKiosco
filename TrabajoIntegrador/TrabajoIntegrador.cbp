@@ -58,6 +58,8 @@
 		<Unit filename="Menu.h" />
 		<Unit filename="Producto.cpp" />
 		<Unit filename="Producto.h" />
+		<Unit filename="ProductoManager.cpp" />
+		<Unit filename="ProductoManager.h" />
 		<Unit filename="Proveedor.cpp" />
 		<Unit filename="Proveedor.h" />
 		<Unit filename="ProveedorArchivo.cpp" />

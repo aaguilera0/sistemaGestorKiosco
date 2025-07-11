@@ -5,80 +5,92 @@ using namespace std;
 #include "Categoria.h"
 #include "ArchivoCategoria.h"
 #include "Compra.h"
-
+ArchivoCategoria::ArchivoCategoria(){
+    _nombreArchivo = "categorias.dat";
+}
 ArchivoCategoria::ArchivoCategoria(std::string nombreArchivo){
     _nombreArchivo = nombreArchivo;
 }
 
-bool ArchivoCategoria::Guardar(Categoria categoria){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
-    if(pArchivo == NULL){
+bool ArchivoCategoria::guardar(Categoria registro){
+    FILE *pFile;
+    bool resultado;
+
+    pFile = fopen(_nombreArchivo.c_str(),"ab");
+
+    if(pFile==nullptr){
         return false;
     }
-    bool ok = fwrite(&categoria, sizeof(Categoria), 1, pArchivo);
-    fclose(pArchivo);
-    return ok;
-}
 
-/*bool ArchivoCategoria::Guardar(Categoria categoria, int posicion){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-    if(pArchivo == NULL){
+    resultado = fwrite(&registro, sizeof(Categoria),1,pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}
+bool ArchivoCategoria::guardar(Categoria registro, int posicion){
+    FILE *pFile;
+    bool resultado;
+
+    pFile = fopen(_nombreArchivo.c_str(),"rb+");
+
+    if(pFile == nullptr){
         return false;
     }
-    fseek(pArchivo, sizeof(Categoria) * posicion, SEEK_SET);
-    bool ok = fwrite(&categoria, sizeof(Categoria), 1, pArchivo);
-    fclose(pArchivo);
-    return ok;
-}*/
 
-int ArchivoCategoria::Buscar(int IDCategoria){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return -1;
-    }
-    Categoria categoria;
-    int i = 0;
-    while(fread(&categoria, sizeof(Categoria), 1, pArchivo)){
-        if(categoria.getIdCategoria() == IDCategoria){
-            fclose(pArchivo);
-            return i;
-        }
-        i++;
-    }
-    fclose(pArchivo);
-    return -1;
+    fseek(pFile, posicion * sizeof(Categoria), SEEK_SET);
+
+    resultado = fwrite(&registro,sizeof(Categoria),1,pFile);
+
+    fclose(pFile);
+
+    return resultado;
 }
+int ArchivoCategoria::getCantidadRegistros(){
+    FILE *pFile;
+    int cantidad, total;
 
-/*Compra ArchivoCategoria::Leer(int posicion){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return Categoria();
-    }
-    Categoria categoria;
-    fseek(pArchivo, sizeof(Categoria) * posicion, SEEK_SET);
-    fread(&categoria, sizeof(Categoria), 1, pArchivo);
-    fclose(pArchivo);
-    return categoria;
-}*/
+    pFile = fopen(_nombreArchivo.c_str(),"rb");
 
-int ArchivoCategoria::CantidadRegistros(){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
+    if(pFile==nullptr){
         return 0;
     }
-    fseek(pArchivo, 0, SEEK_END);
-    int cantidadRegistros = ftell(pArchivo) / sizeof(Categoria);
-    fclose(pArchivo);
-    return cantidadRegistros;
-}
 
-void ArchivoCategoria::Leer(int cantidadRegistros, Categoria *vector){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == NULL){
-        return;
+    fseek(pFile,0,SEEK_END);
+
+    total = ftell(pFile);
+
+    cantidad = total / sizeof(Categoria);
+
+    fclose(pFile);
+
+    return cantidad;
+}
+Categoria ArchivoCategoria::leer(int pos){
+    FILE *pFile;
+    Categoria reg;
+
+    pFile = fopen(_nombreArchivo.c_str(),"rb");
+
+    if(pFile==nullptr){
+        return reg;
     }
-    for(int i = 0; i < cantidadRegistros; i++){
-        fread(&vector[i], sizeof(Categoria), 1, pArchivo);
+
+    fseek(pFile,sizeof(Categoria)*pos,SEEK_SET);
+    fread(&reg,sizeof(Categoria),1,pFile);
+
+    fclose(pFile);
+
+    return reg;
+}
+int ArchivoCategoria::buscarPorID(int idBuscado) {
+    Categoria cat;
+    int cantidad = getCantidadRegistros();
+    for(int i = 0; i < cantidad; i++) {
+        cat = leer(i);
+        if(cat.getIdCategoria() == idBuscado ) {
+            return i;
+        }
     }
-    fclose(pArchivo);
+    return -1;
 }
