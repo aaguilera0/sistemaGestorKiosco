@@ -68,14 +68,18 @@
 		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="ProveedorManager.cpp" />
 		<Unit filename="ProveedorManager.h" />
+		<Unit filename="ProveedorProductoManager.cpp" />
+		<Unit filename="ProveedorProductoManager.h" />
 		<Unit filename="RelacionProveedorProducto.cpp" />
 		<Unit filename="RelacionProveedorProducto.h" />
 		<Unit filename="TrabajoIntegrador.cbp" />
 		<Unit filename="TrabajoIntegrador.depend" />
 		<Unit filename="TrabajoIntegrador.layout" />
+		<Unit filename="categorias.dat" />
 		<Unit filename="compras.dat" />
 		<Unit filename="main.cpp" />
 		<Unit filename="productos.dat" />
+		<Unit filename="proveedores.dat" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
