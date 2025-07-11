@@ -39,6 +39,7 @@ void Menu::mostrarMenuPrincipal()
                 break;
             case 3:
                 // gestionProveedores();
+                menuProveedores();
                 cout << "Gestion de proveedores y sus productos..." << endl;
                 break;
             case 4:

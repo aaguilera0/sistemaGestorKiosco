@@ -25,6 +25,7 @@ void menuProveedores(){
         cout << "3- ELIMINAR PROVEEDORES" << endl;
         cout << "4- LISTAR PROVEEDORES" << endl;
         cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
+        cout << "6- SELECCIONAR UN PROVEEDOR" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -44,7 +45,7 @@ void menuProveedores(){
             break;
         case 2:
             system("cls");
-            //manager.modificarProveedor();
+            manager.modificarProveedor();
             break;
         case 3:
             system("cls");
@@ -57,6 +58,12 @@ void menuProveedores(){
         case 5:
             system("cls");
             manager.mostrarCantidadRegistros();
+            break;
+        case 6:
+            system("cls");
+            //buscamos el proveedor
+            manager.BuscarProveedorPorCuit();
+
             break;
         case 0:
             system("cls");
@@ -103,23 +110,23 @@ void menuProducto(){
 
         case 1:
             system("cls");
-            manager.cargarNuevoProducto();
+           // manager.cargarNuevoProducto();
             break;
         case 2:
             system("cls");
-            manager.modificarProducto();
+           // manager.modificarProducto();
             break;
         case 3:
             system("cls");
-            manager.eliminarProducto();
+          //  manager.eliminarProducto();
             break;
         case 4:
             system("cls");
-            manager.listarProductos();
+           // manager.listarProductos();
             break;
         case 5:
             system("cls");
-            manager.mostrarCantidadRegistros();
+      //      manager.mostrarCantidadRegistros();
             break;
         case 6:
             system("cls");

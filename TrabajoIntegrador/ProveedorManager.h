@@ -7,4 +7,5 @@ class ProveedorManager{
         void eliminarProveedor();
         void listarProveedores();
         void mostrarCantidadRegistros();
+        void BuscarProveedorPorCuit();
 };
