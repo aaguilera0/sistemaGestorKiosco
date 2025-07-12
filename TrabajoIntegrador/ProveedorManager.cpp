@@ -128,7 +128,7 @@ void ProveedorManager::listarProveedores(){
         cout << registro.toCSV() << endl;
     }
 }
-void ProveedorManager::BuscarProveedorPorCuit(){
+bool ProveedorManager::BuscarProveedorPorCuit(){
     ProveedorArchivo pArchivo;
     Proveedor registro;
     string cuit;
@@ -136,8 +136,22 @@ void ProveedorManager::BuscarProveedorPorCuit(){
     cin >> cuit;
     if(pArchivo.Buscar(cuit, registro)){
         cout << "proveedor encontrado" << endl;
+        return true;
     }else{
         cout << "proveedor no encontrado" << endl;
+        return false;
+    }
+
+}
+bool ProveedorManager::BuscarProveedorPorCuit(string cuit){
+    ProveedorArchivo pArchivo;
+    Proveedor registro;
+    if(pArchivo.Buscar(cuit, registro)){
+        cout << "proveedor encontrado" << endl;
+        return true;
+    }else{
+        cout << "proveedor no encontrado" << endl;
+        return false;
     }
 
 }

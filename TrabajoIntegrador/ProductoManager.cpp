@@ -4,6 +4,8 @@
 #include "ArchivoCategoria.h"
 #include "ArchivoProducto.h"
 #include "ProductoManager.h"
+#include "ProveedorProductoManager.h"
+#include "ProveedorManager.h"
 #include <string>
 
 using namespace std;
@@ -20,6 +22,8 @@ using namespace std;
 */
 int ProductoManager :: cargarNuevoProducto()
 {
+    ProveedorProductoManager relacionManager;
+    ProveedorManager proveedorManager;
     Producto producto;
     ArchivoProducto pArchivo;
 
@@ -28,9 +32,14 @@ int ProductoManager :: cargarNuevoProducto()
     int stock;
     float precioUnitario;
     std::string nombreProducto;
+    std::string cuit;
 
+    cout << "ingrese el cuit del proveedor a vincular con el producto:" << endl;
+    cin >> cuit;
+    if(proveedorManager.BuscarProveedorPorCuit(cuit)){
+        cout << "proveedor encontrado" << endl;
 
-    cout << "ID PRODUCTO : " ;
+        cout << "ID PRODUCTO : " ;
     int cantidad = pArchivo.getCantidadRegistros();
     idProducto = cantidad + 1;
     cout << idProducto << endl;
@@ -51,7 +60,7 @@ int ProductoManager :: cargarNuevoProducto()
     cin >> stock;
     cout << "PRECIO UNITARIO : ";
     cin >> precioUnitario;
-
+    relacionManager.cargarNuevaRelacion(cuit, idProducto);
     producto.setEstado(true);
     producto.setIdProducto(idProducto);
     producto.setIdCategoria(idCategoria);
@@ -65,6 +74,10 @@ int ProductoManager :: cargarNuevoProducto()
     else{
         cout << "HUBO UN ERROR AL GUARDAR." << endl;
     }
+    }else{
+        cout << "proveedor no encontrado" << endl;
+    }
+
     return 0;
 
 }
