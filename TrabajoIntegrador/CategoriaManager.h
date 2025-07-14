@@ -10,7 +10,6 @@ public:
     void eliminarCategoria();
     void listarCategorias();
     void activarCategoria();
-
 };
 
 

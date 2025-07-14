@@ -12,9 +12,10 @@ public:
         ArchivoCategoria(std::string nombreArchivo);
         bool guardar(Categoria registro);
         bool guardar(Categoria registro, int posicion);
-        int getCantidadRegistros();
+        int CantidadRegistros();
         Categoria leer(int pos);
         int buscarPorID(int id);
+        int obtenerUltimoId();
 };
 
 #endif // ARCHIVOCATEGORIA_H_INCLUDED

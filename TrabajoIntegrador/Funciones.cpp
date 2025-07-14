@@ -15,10 +15,6 @@ void menuProveedores(){
 
     do
     {
-        cout << "====================================" << endl;
-        cout << "          MAXIKIOSCO LAMINE         " << endl;
-        cout << "====================================" << endl;
-        cout << endl;
         cout << "--------- MENU PROVEEDORES ---------" << endl;
         cout << endl;
         cout << "1- AGREGAR PROVEEDORES" << endl;
@@ -75,7 +71,6 @@ void menuProveedores(){
             break;}
         case 0:{
             system("cls");
-            cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
             return;}
         default:{
             cout << "INTENTA NUEVAMENTE, POR FAVOR." << endl;
@@ -91,10 +86,6 @@ void menuProducto(){
 
     do
     {
-        cout << "====================================" << endl;
-        cout << "          MAXIKIOSCO LAMINE         " << endl;
-        cout << "====================================" << endl;
-        cout << endl;
         cout << "--------- MENU PRODUCTO ---------" << endl;
         cout << endl;
         cout << "1- AGREGAR PRODUCTO" << endl;
@@ -147,7 +138,6 @@ void menuProducto(){
             break;
         case 0:
             system("cls");
-            cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
             return;
         default:
             cout << "INTENTA NUEVAMENTE, POR FAVOR." << endl;
@@ -163,10 +153,6 @@ void menuCategoria(){
 
     do
     {
-        cout << "====================================" << endl;
-        cout << "          MAXIKIOSCO LAMINE         " << endl;
-        cout << "====================================" << endl;
-        cout << endl;
         cout << "--------- MENU CATEGORIA ---------" << endl;
         cout << endl;
         cout << "1- AGREGAR CATEGORIA" << endl;
@@ -209,7 +195,6 @@ void menuCategoria(){
             break;
         case 0:
             system("cls");
-            cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
             return;
         default:
             cout << "INTENTA NUEVAMENTE, POR FAVOR." << endl;

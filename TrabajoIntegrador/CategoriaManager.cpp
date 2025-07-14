@@ -1,11 +1,8 @@
 #include <iostream>
-
 #include "Categoria.h"
 #include "ArchivoCategoria.h"
 #include "CategoriaManager.h"
-
 #include <string>
-/// CATEGORIA
 
 int CategoriaManager :: agregarCategoria(){
 
@@ -16,9 +13,8 @@ int CategoriaManager :: agregarCategoria(){
     std::string nombreCategoria;
 
 
-    cout << "ID CATEGORIA : " ;
-    int cantidad = pArchivo.getCantidadRegistros();
-    idCategoria = cantidad + 1;
+    cout << "ID CATEGORIA : ";
+    idCategoria = pArchivo.obtenerUltimoId() + 1;
     cout << idCategoria << endl;
 
 
@@ -44,17 +40,15 @@ int CategoriaManager :: agregarCategoria(){
 }
 
 void CategoriaManager :: modificarCategoria(){
-
     ArchivoCategoria pArchivo;
     int idCategoria;
     Categoria categoria;
-    int cantidad = pArchivo.getCantidadRegistros();
     bool encontrado = false;
 
     cout << "INGRESE EL ID DE LA CATEGORIA A MODIFICAR: ";
     cin >> idCategoria;
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < pArchivo.CantidadRegistros(); i++){
         categoria = pArchivo.leer(i);
 
         if(categoria.getIdCategoria() == idCategoria){
@@ -81,17 +75,15 @@ void CategoriaManager :: modificarCategoria(){
         }}}
 
 void CategoriaManager :: eliminarCategoria(){
-
     ArchivoCategoria pArchivo;
     int idCategoria;
     Categoria categoria;
-    int cantidad = pArchivo.getCantidadRegistros();
     bool encontrado = false;
 
     cout << "INGRESE EL ID DE LA CATEGORIA A ELIMINAR: ";
     cin >> idCategoria;
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < pArchivo.CantidadRegistros(); i++){
         categoria = pArchivo.leer(i);
 
         if(categoria.getIdCategoria() == idCategoria){
@@ -119,9 +111,8 @@ void CategoriaManager :: eliminarCategoria(){
 void CategoriaManager :: listarCategorias(){
     ArchivoCategoria pArchivo;
     Categoria registro;
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
 
-    for(int i=0;i<cantidadRegistros;i++){
+    for(int i=0;i<pArchivo.CantidadRegistros();i++){
         registro = pArchivo.leer(i);
         if(registro.getEstado()==true){
             cout << registro.toCSV() << endl;
@@ -132,13 +123,12 @@ void CategoriaManager :: listarCategorias(){
 void CategoriaManager :: activarCategoria(){
     Categoria registro;
     ArchivoCategoria pArchivo;
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
     int idCategoria;
     bool encontrado = false;
 
     cout << "CATEGORIAS ELIMINADAS ||" << endl;
 
-    for(int i=0; i<cantidadRegistros; i++)
+    for(int i=0; i<pArchivo.CantidadRegistros(); i++)
     {
         registro = pArchivo.leer(i);
         if(registro.getEstado()==false)
@@ -151,7 +141,7 @@ void CategoriaManager :: activarCategoria(){
     cin >> idCategoria;
 
 
-    for(int i =0; i < cantidadRegistros; i++)
+    for(int i =0; i < pArchivo.CantidadRegistros(); i++)
     {
         registro = pArchivo.leer(i);
         if(registro.getIdCategoria()== idCategoria)

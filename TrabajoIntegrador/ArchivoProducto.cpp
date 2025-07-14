@@ -45,7 +45,7 @@ bool ArchivoProducto::guardar(Producto registro, int posicion){
 
     return resultado;
 }
-int ArchivoProducto::getCantidadRegistros(){
+int ArchivoProducto::CantidadRegistros(){
     FILE *pFile;
     int cantidad, total;
 
@@ -84,7 +84,7 @@ Producto ArchivoProducto::leer(int pos){
 }
 int ArchivoProducto::buscarPorID(int idBuscado) {
     Producto prod;
-    int cantidad = getCantidadRegistros();
+    int cantidad = CantidadRegistros();
     for(int i = 0; i < cantidad; i++) {
         prod = leer(i);
         if(prod.getIdProducto() == idBuscado ) {
@@ -92,4 +92,11 @@ int ArchivoProducto::buscarPorID(int idBuscado) {
         }
     }
     return -1;
+}
+int ArchivoProducto::ObtenerUltimoId() {
+    int cantidad = CantidadRegistros();
+    if (cantidad == 0) return 0;
+
+    Producto ultimoProducto = leer(cantidad - 1);
+    return ultimoProducto.getIdProducto();
 }

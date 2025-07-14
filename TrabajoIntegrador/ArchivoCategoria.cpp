@@ -1,10 +1,9 @@
 #include <iostream>
 #include <cstring>
-using namespace std;
-
 #include "Categoria.h"
 #include "ArchivoCategoria.h"
 #include "Compra.h"
+using namespace std;
 ArchivoCategoria::ArchivoCategoria(){
     _nombreArchivo = "categorias.dat";
 }
@@ -46,7 +45,7 @@ bool ArchivoCategoria::guardar(Categoria registro, int posicion){
 
     return resultado;
 }
-int ArchivoCategoria::getCantidadRegistros(){
+int ArchivoCategoria::CantidadRegistros(){
     FILE *pFile;
     int cantidad, total;
 
@@ -85,7 +84,7 @@ Categoria ArchivoCategoria::leer(int pos){
 }
 int ArchivoCategoria::buscarPorID(int idBuscado) {
     Categoria cat;
-    int cantidad = getCantidadRegistros();
+    int cantidad = CantidadRegistros();
     for(int i = 0; i < cantidad; i++) {
         cat = leer(i);
         if(cat.getIdCategoria() == idBuscado ) {
@@ -93,4 +92,11 @@ int ArchivoCategoria::buscarPorID(int idBuscado) {
         }
     }
     return -1;
+}
+int ArchivoCategoria::obtenerUltimoId() {
+    int cantidad = CantidadRegistros();
+    if (cantidad == 0) return 0;
+
+    Categoria ultimaCategoria = leer(cantidad - 1);
+    return ultimaCategoria.getIdCategoria();
 }

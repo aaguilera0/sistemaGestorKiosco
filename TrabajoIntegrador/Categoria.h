@@ -17,7 +17,6 @@ class Categoria{
     void setEstado(bool estado);
     void setIDCategoria(int idCategoria);
     void setNombreCategoria(std::string nombreCategoria );
-
     string toCSV();
 };
 

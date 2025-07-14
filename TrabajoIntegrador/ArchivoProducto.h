@@ -11,10 +11,10 @@ class ArchivoProducto{
 
         bool guardar(Producto registro);
         bool guardar(Producto registro, int posicion);
-        int getCantidadRegistros();
+        int CantidadRegistros();
         Producto leer(int pos);
         int buscarPorID(int id);
-
+        int ObtenerUltimoId();
 };
 
 #endif // ARCHIVOPRODUCTO_H_INCLUDED

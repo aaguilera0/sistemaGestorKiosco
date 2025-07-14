@@ -6,16 +6,17 @@
 #include "ProductoManager.h"
 #include "ProveedorProductoManager.h"
 #include "ProveedorManager.h"
+#include "CategoriaManager.h"
 #include <string>
+
 
 using namespace std;
 
-/// PRODUCTO
 void ProductoManager :: activarProducto()
 {
     Producto registro;
     ArchivoProducto pArchivo;
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
+    int cantidadRegistros = pArchivo.CantidadRegistros();
     int idProducto;
     bool encontrado = false;
 
@@ -66,12 +67,12 @@ void ProductoManager :: activarProducto()
 
 int ProductoManager :: cargarNuevoProducto()
 {
+    CategoriaManager catManager;
     ProveedorProductoManager relacionManager;
     ProveedorManager proveedorManager;
     Producto producto;
     ArchivoProducto pArchivo;
     Categoria categoria;
-    ArchivoCategoria archCategoria;
 
     int idProducto;
     int idCategoria;
@@ -83,63 +84,40 @@ int ProductoManager :: cargarNuevoProducto()
     cout << "ingrese el cuit del proveedor a vincular con el producto:" << endl;
     cin >> cuit;
     if(proveedorManager.BuscarProveedorPorCuit(cuit)){
-        cout << "proveedor encontrado" << endl;
-
+        idProducto = pArchivo.ObtenerUltimoId() + 1;
         cout << "ID PRODUCTO : " ;
-    int cantidad = pArchivo.getCantidadRegistros();
-    idProducto = cantidad + 1;
-    // CANTIDADES DE REGISTROS DE PRODUCTOS Y CATEGORIAS
-    int cantidad = pArchivo.getCantidadRegistros();
-    int cantidadCat = archCategoria.getCantidadRegistros();
-    idProducto = cantidad + 1;
+        cout << idProducto << endl;
 
-    cout << "ID PRODUCTO : " ;
+        cout << "NOMBRE DE PRODUCTO :" ;
+        cin.ignore();
+        getline(cin, nombreProducto);
+        cout << endl;
 
-    cout << idProducto << endl;
+        catManager.listarCategorias();
+        cout << endl;
+        cout << "ID CATEGORIA ";
+        cin >> idCategoria;
+        cout << "STOCK : " ;
+        cin >> stock;
+        cout << "PRECIO UNITARIO : ";
+        cin >> precioUnitario;
 
+        relacionManager.cargarNuevaRelacion(cuit, idProducto);
+        producto.setEstado(true);
+        producto.setIdProducto(idProducto);
+        producto.setIdCategoria(idCategoria);
+        producto.setStock(stock);
+        producto.setPrecioUnitario(precioUnitario);
+        producto.setNombre(nombreProducto);
 
-    int pos = pArchivo.buscarPorID(idProducto);
-    if(pos >= 0)   // Ya existe un producto con ese ID
-    {
-        cout << "ERROR: Ya existe un producto con ese ID." << endl;
-        return -1; // No continua el guardado
-    }
-
-    cout << "NOMBRE DE PRODUCTO :" ;
-    cin.ignore(); // limpiar el buffer si antes usaste cin
-    getline(cin, nombreProducto);
-    cout << endl;
-    for(int i = 0; i < cantidadCat; i++)
-    {
-        categoria = archCategoria.leer(i);
-        if(categoria.getEstado() == true)
+        if(pArchivo.guardar(producto))
         {
-            cout << categoria.toCSV() << endl;
+            cout << "SE GUARDO CORRECTAMENTE." << endl;
         }
-    }
-    cout << endl;
-    cout << "ID CATEGORIA ";
-    cin >> idCategoria;
-    cout << "STOCK : " ;
-    cin >> stock;
-    cout << "PRECIO UNITARIO : ";
-    cin >> precioUnitario;
-    relacionManager.cargarNuevaRelacion(cuit, idProducto);
-    producto.setEstado(true);
-    producto.setIdProducto(idProducto);
-    producto.setIdCategoria(idCategoria);
-    producto.setStock(stock);
-    producto.setPrecioUnitario(precioUnitario);
-    producto.setNombre(nombreProducto);
-
-    if(pArchivo.guardar(producto))
-    {
-        cout << "SE GUARDO CORRECTAMENTE." << endl;
-    }
-    else
-    {
-        cout << "HUBO UN ERROR AL GUARDAR." << endl;
-    }
+        else
+        {
+            cout << "HUBO UN ERROR AL GUARDAR." << endl;
+        }
     }else{
         cout << "proveedor no encontrado" << endl;
     }
@@ -152,7 +130,7 @@ void ProductoManager::mostrarCantidadRegistros()
 {
     ArchivoProducto pArchivo;
 
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
+    int cantidadRegistros = pArchivo.CantidadRegistros();
 
     cout << "LA CANTIDAD DE REGISTROS SON: " << cantidadRegistros << endl;
 }
@@ -161,7 +139,7 @@ void ProductoManager::listarProductos()
 {
     ArchivoProducto pArchivo;
     Producto registro;
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
+    int cantidadRegistros = pArchivo.CantidadRegistros();
 
     for(int i=0; i<cantidadRegistros; i++)
     {
@@ -176,19 +154,16 @@ void ProductoManager::listarProductos()
 void ProductoManager::modificarProducto()
 {
     ArchivoProducto pArchivo;
-    ArchivoCategoria archCategoria;
     int idProducto;
     Producto producto;
     Categoria categoria;
-    // CANTIDADES DE REGISTROS DE PRODUCTOS Y CATEGORIAS
-    int cantidad = pArchivo.getCantidadRegistros();
-    int cantidadCat = archCategoria.getCantidadRegistros();
+    CategoriaManager catManager;
     bool encontrado = false;
 
     cout << "INGRESE EL ID DEL PRODUCTO A MODIFICAR: ";
     cin >> idProducto;
 
-    for(int i = 0; i < cantidad; i++)
+    for(int i = 0; i < pArchivo.CantidadRegistros(); i++)
     {
         producto = pArchivo.leer(i);
 
@@ -206,18 +181,12 @@ void ProductoManager::modificarProducto()
 
 
             cout << "INGRESE EL NUEVO NOMBRE: ";
-            cin.ignore(); // limpiar el buffer si antes usaste cin >>
+            cin.ignore();
             getline(cin, nombreProducto);
             cout << endl;
+
             cout << "CATEGORIAS ||" << endl;
-            for(int i = 0; i < cantidadCat; i++)
-            {
-                categoria = archCategoria.leer(i);
-                if(categoria.getEstado() == true)
-                {
-                    cout << categoria.toCSV() << endl;
-                }
-            }
+            catManager.listarCategorias();
             cout << endl;
 
             cout << "INGRESE EL NUEVO ID CATEGORIA: ";
@@ -259,13 +228,12 @@ void ProductoManager :: eliminarProducto()
     ArchivoProducto pArchivo;
     int idProducto;
     Producto producto;
-    int cantidad = pArchivo.getCantidadRegistros();
     bool encontrado = false;
 
     cout << "INGRESE EL ID DEL PRODUCTO A ELIMINAR: ";
     cin >> idProducto;
 
-    for(int i = 0; i < cantidad; i++)
+    for(int i = 0; i <  pArchivo.CantidadRegistros(); i++)
     {
         producto = pArchivo.leer(i);
 

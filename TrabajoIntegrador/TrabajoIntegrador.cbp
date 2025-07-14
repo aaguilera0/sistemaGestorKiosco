@@ -44,6 +44,8 @@
 		<Unit filename="ArchivoProveedorProducto.h" />
 		<Unit filename="Categoria.cpp" />
 		<Unit filename="Categoria.h" />
+		<Unit filename="CategoriaManager.cpp" />
+		<Unit filename="CategoriaManager.h" />
 		<Unit filename="Compra.cpp" />
 		<Unit filename="Compra.h" />
 		<Unit filename="CompraManager.cpp" />
