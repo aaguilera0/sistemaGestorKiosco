@@ -8,14 +8,7 @@ public:
     void mostrarCantidadRegistros();
     void listarProductos();
     void eliminarProducto();
-    //void activarProducto();
-
-    /// CATEGORIA
-
-    int agregarCategoria();
-    void modificarCategoria();
-    void eliminarCategoria();
-    void listarCategorias();
+    void activarProducto();
 };
 
 #endif // PRODUCTOMANAGER_H_INCLUDED

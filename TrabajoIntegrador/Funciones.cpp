@@ -2,6 +2,7 @@
 #include "Menu.h"
 #include "ProveedorManager.h"
 #include "ProductoManager.h"
+#include "CategoriaManager.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -95,6 +96,7 @@ void menuProducto(){
         cout << "4- LISTAR PRODUCTOS" << endl;
         cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
         cout << "6- GESTION DE CATEGORIAS DE PRODUCTOS" << endl;
+        cout << "7- ACTIVAR PRODUCTO" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -110,27 +112,31 @@ void menuProducto(){
 
         case 1:
             system("cls");
-           // manager.cargarNuevoProducto();
+            manager.cargarNuevoProducto();
             break;
         case 2:
             system("cls");
-           // manager.modificarProducto();
+            manager.modificarProducto();
             break;
         case 3:
             system("cls");
-          //  manager.eliminarProducto();
+            manager.eliminarProducto();
             break;
         case 4:
             system("cls");
-           // manager.listarProductos();
+            manager.listarProductos();
             break;
         case 5:
             system("cls");
-      //      manager.mostrarCantidadRegistros();
+            manager.mostrarCantidadRegistros();
             break;
         case 6:
             system("cls");
             menuCategoria();
+            break;
+        case 7:
+            system("cls");
+            manager.activarProducto();
             break;
         case 0:
             system("cls");
@@ -144,7 +150,7 @@ void menuProducto(){
 }
 void menuCategoria(){
     int opc;
-    ProductoManager manager;
+    CategoriaManager manager;
 
     system("cls");
 
@@ -160,6 +166,7 @@ void menuCategoria(){
         cout << "2- MODIFICAR CATEGORIA" << endl;
         cout << "3- ELIMINAR CATEGORIA" << endl;
         cout << "4- LISTAR CATEGORIAS" << endl;
+        cout << "5- ACTIVAR CATEGORIA" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -188,6 +195,10 @@ void menuCategoria(){
         case 4:
             system("cls");
             manager.listarCategorias();
+            break;
+        case 5:
+            system("cls");
+            manager.activarCategoria();
             break;
         case 0:
             system("cls");

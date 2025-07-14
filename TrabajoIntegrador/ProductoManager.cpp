@@ -9,19 +9,65 @@
 using namespace std;
 
 /// PRODUCTO
-/*void ProductoManager :: activarProducto(){
-    Producto producto;
+void ProductoManager :: activarProducto()
+{
+    Producto registro;
     ArchivoProducto pArchivo;
-    cout << "PRODUCTOS ELIMINADOS" << endl;
+    int cantidadRegistros = pArchivo.getCantidadRegistros();
+    int idProducto;
+    bool encontrado = false;
 
+    cout << "PRODUCTOS ELIMINADOS ||" << endl;
+
+    for(int i=0; i<cantidadRegistros; i++)
+    {
+        registro = pArchivo.leer(i);
+        if(registro.getEstado()==false)
+        {
+            cout << registro.toCSV() << endl;
+        }
+    }
     cout << "INGRESAR EL ID DEL PRODUCTO PARA ACTIVAR" << endl;
+    cin >> idProducto;
+
+
+    for(int i =0; i < cantidadRegistros; i++)
+    {
+        registro = pArchivo.leer(i);
+        if(registro.getIdProducto()== idProducto)
+        {
+            encontrado = true;
+
+            cout << "PRODUCTO ENCONTRADO!" << endl;
+            cout << registro.toCSV() << endl;
+
+            registro.setEstado(true);
+
+            if(pArchivo.guardar(registro,i))
+            {
+                cout << "PRODUCTO ACTIVADO!" << endl;
+            }
+            else
+            {
+                cout << "NO SE PUDO ACTIVAR EL PRODUCTO CON EXITO!" << endl;
+            }
+            break;
+        }
+
+    }
+    if(!encontrado)
+    {
+        cout << "NO SE ENCONTRO NINGUN PRODUCTO CON ESE ID." << endl;
+    }
 
 }
-*/
+
 int ProductoManager :: cargarNuevoProducto()
 {
     Producto producto;
     ArchivoProducto pArchivo;
+    Categoria categoria;
+    ArchivoCategoria archCategoria;
 
     int idProducto;
     int idCategoria;
@@ -29,22 +75,36 @@ int ProductoManager :: cargarNuevoProducto()
     float precioUnitario;
     std::string nombreProducto;
 
+    // CANTIDADES DE REGISTROS DE PRODUCTOS Y CATEGORIAS
+    int cantidad = pArchivo.getCantidadRegistros();
+    int cantidadCat = archCategoria.getCantidadRegistros();
+    idProducto = cantidad + 1;
 
     cout << "ID PRODUCTO : " ;
-    int cantidad = pArchivo.getCantidadRegistros();
-    idProducto = cantidad + 1;
+
     cout << idProducto << endl;
 
 
     int pos = pArchivo.buscarPorID(idProducto);
-    if(pos >= 0) { // Ya existe un producto con ese ID
+    if(pos >= 0)   // Ya existe un producto con ese ID
+    {
         cout << "ERROR: Ya existe un producto con ese ID." << endl;
-        return -1; // No contin�a el guardado
+        return -1; // No continua el guardado
     }
 
     cout << "NOMBRE DE PRODUCTO :" ;
-    cin.ignore(); // limpiar el buffer si antes usaste cin >>
+    cin.ignore(); // limpiar el buffer si antes usaste cin
     getline(cin, nombreProducto);
+    cout << endl;
+    for(int i = 0; i < cantidadCat; i++)
+    {
+        categoria = archCategoria.leer(i);
+        if(categoria.getEstado() == true)
+        {
+            cout << categoria.toCSV() << endl;
+        }
+    }
+    cout << endl;
     cout << "ID CATEGORIA ";
     cin >> idCategoria;
     cout << "STOCK : " ;
@@ -59,17 +119,20 @@ int ProductoManager :: cargarNuevoProducto()
     producto.setPrecioUnitario(precioUnitario);
     producto.setNombre(nombreProducto);
 
-    if(pArchivo.guardar(producto)){
+    if(pArchivo.guardar(producto))
+    {
         cout << "SE GUARDO CORRECTAMENTE." << endl;
     }
-    else{
+    else
+    {
         cout << "HUBO UN ERROR AL GUARDAR." << endl;
     }
     return 0;
 
 }
 
-void ProductoManager::mostrarCantidadRegistros(){
+void ProductoManager::mostrarCantidadRegistros()
+{
     ArchivoProducto pArchivo;
 
     int cantidadRegistros = pArchivo.getCantidadRegistros();
@@ -77,33 +140,43 @@ void ProductoManager::mostrarCantidadRegistros(){
     cout << "LA CANTIDAD DE REGISTROS SON: " << cantidadRegistros << endl;
 }
 
-void ProductoManager::listarProductos(){
+void ProductoManager::listarProductos()
+{
     ArchivoProducto pArchivo;
     Producto registro;
     int cantidadRegistros = pArchivo.getCantidadRegistros();
 
-    for(int i=0;i<cantidadRegistros;i++){
+    for(int i=0; i<cantidadRegistros; i++)
+    {
         registro = pArchivo.leer(i);
-        if(registro.getEstado()==true){
+        if(registro.getEstado()==true)
+        {
             cout << registro.toCSV() << endl;
         }
 
     }
 }
-void ProductoManager::modificarProducto(){
+void ProductoManager::modificarProducto()
+{
     ArchivoProducto pArchivo;
+    ArchivoCategoria archCategoria;
     int idProducto;
     Producto producto;
+    Categoria categoria;
+    // CANTIDADES DE REGISTROS DE PRODUCTOS Y CATEGORIAS
     int cantidad = pArchivo.getCantidadRegistros();
+    int cantidadCat = archCategoria.getCantidadRegistros();
     bool encontrado = false;
 
     cout << "INGRESE EL ID DEL PRODUCTO A MODIFICAR: ";
     cin >> idProducto;
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidad; i++)
+    {
         producto = pArchivo.leer(i);
 
-        if(producto.getIdProducto() == idProducto){
+        if(producto.getIdProducto() == idProducto)
+        {
             encontrado = true;
             cout << "PRODUCTO ENCONTRADO: " << endl;
             cout << producto.toCSV() << endl;
@@ -118,6 +191,17 @@ void ProductoManager::modificarProducto(){
             cout << "INGRESE EL NUEVO NOMBRE: ";
             cin.ignore(); // limpiar el buffer si antes usaste cin >>
             getline(cin, nombreProducto);
+            cout << endl;
+            cout << "CATEGORIAS ||" << endl;
+            for(int i = 0; i < cantidadCat; i++)
+            {
+                categoria = archCategoria.leer(i);
+                if(categoria.getEstado() == true)
+                {
+                    cout << categoria.toCSV() << endl;
+                }
+            }
+            cout << endl;
 
             cout << "INGRESE EL NUEVO ID CATEGORIA: ";
             cin >> idCategoria;
@@ -135,9 +219,12 @@ void ProductoManager::modificarProducto(){
             producto.setEstado(true);
             producto.setNombre(nombreProducto);
 
-            if(pArchivo.guardar(producto, i)){
+            if(pArchivo.guardar(producto, i))
+            {
                 cout << "PRODUCTO MODIFICADO CON EXITO." << endl;
-            } else {
+            }
+            else
+            {
                 cout << "ERROR AL MODIFICAR." << endl;
             }
 
@@ -145,11 +232,13 @@ void ProductoManager::modificarProducto(){
         }
     }
 
-    if(!encontrado){
+    if(!encontrado)
+    {
         cout << "NO SE ENCONTRO NINGUN PROVEEDOR CON ESE CUIT." << endl;
     }
 }
-void ProductoManager :: eliminarProducto(){
+void ProductoManager :: eliminarProducto()
+{
     ArchivoProducto pArchivo;
     int idProducto;
     Producto producto;
@@ -159,19 +248,24 @@ void ProductoManager :: eliminarProducto(){
     cout << "INGRESE EL ID DEL PRODUCTO A ELIMINAR: ";
     cin >> idProducto;
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidad; i++)
+    {
         producto = pArchivo.leer(i);
 
-        if(producto.getIdProducto() == idProducto){
+        if(producto.getIdProducto() == idProducto)
+        {
             encontrado = true;
             cout << "PRODUCTO ENCONTRADO: " << endl;
             cout << producto.toCSV() << endl;
 
             producto.setEstado(false);
 
-            if(pArchivo.guardar(producto, i)){
+            if(pArchivo.guardar(producto, i))
+            {
                 cout << "PRODUCTO ELIMINADO CON EXITO." << endl;
-            } else {
+            }
+            else
+            {
                 cout << "ERROR AL MODIFICAR." << endl;
             }
 
@@ -179,133 +273,11 @@ void ProductoManager :: eliminarProducto(){
         }
     }
 
-    if(!encontrado){
+    if(!encontrado)
+    {
         cout << "NO SE ENCONTRO NINGUN PRODUCTO CON ESE ID." << endl;
     }
 
 }
 
-/// CATEGORIA
 
-int ProductoManager :: agregarCategoria(){
-
-    Categoria categoria;
-    ArchivoCategoria pArchivo;
-
-    int idCategoria;
-    std::string nombreCategoria;
-
-
-    cout << "ID CATEGORIA : " ;
-    int cantidad = pArchivo.getCantidadRegistros();
-    idCategoria = cantidad + 1;
-    cout << idCategoria << endl;
-
-
-    int pos = pArchivo.buscarPorID(idCategoria);
-    if(pos >= 0) { // Ya existe una categoria con ese ID
-        cout << "ERROR: Ya existe una CATEGORIA con ese ID." << endl;
-        return -1; // No continua el guardado
-    }
-
-    cout << "NOMBRE DE CATEGORIA :" ;
-    cin >> nombreCategoria;
-
-    categoria.setEstado(true);
-    categoria.setIDCategoria(idCategoria);
-    categoria.setNombreCategoria(nombreCategoria);
-
-    if(pArchivo.guardar(categoria)){
-        cout << "SE GUARDO CORRECTAMENTE." << endl;
-    }
-    else{
-        cout << "HUBO UN ERROR AL GUARDAR." << endl;
-    }
-}
-
-void ProductoManager :: modificarCategoria(){
-
-    ArchivoCategoria pArchivo;
-    int idCategoria;
-    Categoria categoria;
-    int cantidad = pArchivo.getCantidadRegistros();
-    bool encontrado = false;
-
-    cout << "INGRESE EL ID DE LA CATEGORIA A MODIFICAR: ";
-    cin >> idCategoria;
-
-    for(int i = 0; i < cantidad; i++){
-        categoria = pArchivo.leer(i);
-
-        if(categoria.getIdCategoria() == idCategoria){
-            encontrado = true;
-            cout << "CATEGORIA ENCONTRADA: " << endl;
-            cout << categoria.toCSV() << endl;
-
-
-            int idCategoria;
-            string nombreCategoria;
-
-            cout << "INGRESE EL NUEVO NOMBRE: ";
-            cin >> nombreCategoria;
-
-            categoria.setNombreCategoria(nombreCategoria);
-
-            if(pArchivo.guardar(categoria, i)){
-                cout << "CATEGORIA MODIFICADA CON EXITO." << endl;
-            } else {
-                cout << "ERROR AL MODIFICAR." << endl;
-            }
-
-            break;
-        }}}
-
-void ProductoManager :: eliminarCategoria(){
-
-    ArchivoCategoria pArchivo;
-    int idCategoria;
-    Categoria categoria;
-    int cantidad = pArchivo.getCantidadRegistros();
-    bool encontrado = false;
-
-    cout << "INGRESE EL ID DE LA CATEGORIA A ELIMINAR: ";
-    cin >> idCategoria;
-
-    for(int i = 0; i < cantidad; i++){
-        categoria = pArchivo.leer(i);
-
-        if(categoria.getIdCategoria() == idCategoria){
-            encontrado = true;
-            cout << "CATEGORIA ENCONTRADA: " << endl;
-            cout << categoria.toCSV() << endl;
-
-            categoria.setEstado(false);
-
-            if(pArchivo.guardar(categoria, i)){
-                cout << "CATEGORIA ELIMINADA CON EXITO." << endl;
-            } else {
-                cout << "ERROR AL ELIMINAR." << endl;
-            }
-
-            break;
-        }
-    }
-
-    if(!encontrado){
-        cout << "NO SE ENCONTRO NINGUNA CATEGORIA CON ESE ID." << endl;
-    }
-}
-
-void ProductoManager :: listarCategorias(){
-    ArchivoCategoria pArchivo;
-    Categoria registro;
-    int cantidadRegistros = pArchivo.getCantidadRegistros();
-
-    for(int i=0;i<cantidadRegistros;i++){
-        registro = pArchivo.leer(i);
-        if(registro.getEstado()==true){
-            cout << registro.toCSV() << endl;
-        }
-
-    }
-}

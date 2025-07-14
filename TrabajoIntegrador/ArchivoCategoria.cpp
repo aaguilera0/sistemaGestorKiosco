@@ -5,6 +5,7 @@ using namespace std;
 #include "Categoria.h"
 #include "ArchivoCategoria.h"
 #include "Compra.h"
+
 ArchivoCategoria::ArchivoCategoria(){
     _nombreArchivo = "categorias.dat";
 }
