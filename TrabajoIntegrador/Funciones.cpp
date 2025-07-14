@@ -2,6 +2,7 @@
 #include "Menu.h"
 #include "ProveedorManager.h"
 #include "ProductoManager.h"
+#include "CategoriaManager.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -39,27 +40,27 @@ void menuProveedores(){
         switch(opc)
         {
 
-        case 1:
+        case 1:{
             system("cls");
             manager.cargarNuevoProveedor();
-            break;
-        case 2:
+            break;}
+        case 2:{
             system("cls");
             manager.modificarProveedor();
-            break;
-        case 3:
+            break;}
+        case 3:{
             system("cls");
             //manager.eliminarProveedor();
-            break;
-        case 4:
+            break;}
+        case 4:{
             system("cls");
             manager.listarProveedores();
-            break;
-        case 5:
+            break;}
+        case 5:{
             system("cls");
             manager.mostrarCantidadRegistros();
-            break;
-        case 6:
+            break;}
+        case 6:{
             system("cls");
             //buscamos el proveedor
             string cuit;
@@ -71,14 +72,14 @@ void menuProveedores(){
                 cout << "proveedor no encontrado" << endl;
             }
 
-            break;
-        case 0:
+            break;}
+        case 0:{
             system("cls");
             cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
-            return;
-        default:
+            return;}
+        default:{
             cout << "INTENTA NUEVAMENTE, POR FAVOR." << endl;
-            return;
+            return;}
         }
 }while(true);
 }
@@ -102,6 +103,7 @@ void menuProducto(){
         cout << "4- LISTAR PRODUCTOS" << endl;
         cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
         cout << "6- GESTION DE CATEGORIAS DE PRODUCTOS" << endl;
+        cout << "7- ACTIVAR PRODUCTO" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -117,7 +119,7 @@ void menuProducto(){
 
         case 1:
             system("cls");
-           manager.cargarNuevoProducto();
+            manager.cargarNuevoProducto();
             break;
         case 2:
             system("cls");
@@ -139,6 +141,10 @@ void menuProducto(){
             system("cls");
             menuCategoria();
             break;
+        case 7:
+            system("cls");
+            manager.activarProducto();
+            break;
         case 0:
             system("cls");
             cout << "GRACIAS POR USAR EL PROGRAMITA. HASTA LUEGO." << endl;
@@ -151,7 +157,7 @@ void menuProducto(){
 }
 void menuCategoria(){
     int opc;
-    ProductoManager manager;
+    CategoriaManager manager;
 
     system("cls");
 
@@ -167,6 +173,7 @@ void menuCategoria(){
         cout << "2- MODIFICAR CATEGORIA" << endl;
         cout << "3- ELIMINAR CATEGORIA" << endl;
         cout << "4- LISTAR CATEGORIAS" << endl;
+        cout << "5- ACTIVAR CATEGORIA" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -195,6 +202,10 @@ void menuCategoria(){
         case 4:
             system("cls");
             manager.listarCategorias();
+            break;
+        case 5:
+            system("cls");
+            manager.activarCategoria();
             break;
         case 0:
             system("cls");

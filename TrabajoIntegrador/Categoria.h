@@ -1,6 +1,7 @@
 #ifndef CATEGORIA_H_INCLUDED
 #define CATEGORIA_H_INCLUDED
-
+#include <string>
+using namespace std;
 class Categoria{
     private:
         int _idCategoria;
