@@ -153,6 +153,40 @@ bool ProveedorManager::BuscarProveedorPorCuit(string cuit){
         cout << "proveedor no encontrado" << endl;
         return false;
     }
-
 }
+void ProveedorManager::desactivarProveedor(){
+    ProveedorArchivo pArchivo;
+    Proveedor proveedor;
+    string cuit;
+    bool encontrado = false;
 
+    cin.ignore();
+    cout << "Ingrese el cuit del proveedor a desactivar." << endl;
+    getline(cin, cuit);
+
+    int cantidad = pArchivo.getCantidadRegistros();
+
+    for(int i=0;i<cantidad;i++){
+        proveedor = pArchivo.leer(i);
+
+        if(proveedor.getCuit()==cuit){
+            encontrado = true;
+
+            cout << "Proveedor encontrado." << endl;
+            cout << proveedor.toCSV() << endl;
+
+            proveedor.setEstado(false);
+
+            if(pArchivo.guardar(proveedor,i)){
+                cout << "Se desactivo correctamente." << endl;
+            }
+            else{
+                cout << "Hubo un error al desactivar." << endl;
+            }
+            break;
+        }
+    }
+            if(encontrado==false){
+            cout << "No se encontro un proveedor con ese cuit." << endl;
+        }
+}
