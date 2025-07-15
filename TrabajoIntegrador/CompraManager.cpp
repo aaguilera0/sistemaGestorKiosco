@@ -2,7 +2,8 @@
 #include "CompraManager.h"
 #include "Compra.h"
 #include "ArchivoCompra.h"
-
+#include <ctime>
+#include <string>
 using namespace std;
 
 void CompraManager::cargarNuevaCompra() {
@@ -17,9 +18,15 @@ void CompraManager::cargarNuevaCompra() {
     cin >> cuit;
     nuevaCompra.setCuitProveedor(cuit);
 
-    cout << "Fecha de la compra (dd mm aaaa): ";
-    int dia, mes, anio;
-    cin >> dia >> mes >> anio;
+    time_t now = time(0);                 // tiempo actual en segundos desde Epoch
+    tm* localTime = localtime(&now);      // convertir a tiempo local
+
+    int dia = localTime->tm_mday;         // día del mes [1, 31]
+    int mes = localTime->tm_mon + 1;      // mes [0, 11] → sumamos 1
+    int anio = localTime->tm_year + 1900; // años desde 1900
+
+    cout << "Fecha Actual: " << to_string(dia) << "/" << to_string(mes) << "/" << to_string(anio) << endl;;
+
     nuevaCompra.setFechaCompra(dia, mes, anio);
 
     if (archivo.Guardar(nuevaCompra)) {
@@ -66,11 +73,11 @@ void CompraManager::eliminarCompra() {
 
     Compra compra;
     if (archivo.Buscar(id, compra)) {
-        // Simular baja l�gica con un CUIT especial
+        // Simular baja lógica con un CUIT especial
         compra.setCuitProveedor("ELIMINADO");
         int pos = archivo.Buscar(id);
         if (archivo.Guardar(compra, pos)) {
-            cout << "Compra eliminada l�gicamente." << endl;
+            cout << "Compra eliminada lógicamente." << endl;
         } else {
             cout << "No se pudo eliminar la compra." << endl;
         }

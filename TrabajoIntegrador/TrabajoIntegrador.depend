@@ -126,7 +126,7 @@
 	<cstring>
 	<string>
 
-1752618529 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1752620034 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
 	"Menu.h"
 	"ProveedorManager.h"
@@ -400,7 +400,7 @@
 	<string>
 	"RelacionProveedorProducto.h"
 
-1752618470 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
+1752620268 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
 	<iostream>
 	"RelacionProveedorProducto.h"
 	"ArchivoProveedorProducto.h"
