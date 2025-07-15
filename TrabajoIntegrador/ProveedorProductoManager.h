@@ -3,12 +3,12 @@
 
 class ProveedorProductoManager{
     public:
-        void cargarNuevaRelacion(string cuitProveedor, int idProducto);
+        void cargarNuevaRelacion(std::string cuitProveedor, int idProducto);
         void modificarRelacion();
         void eliminarRelacion();
         void listar();
         void mostrarCantidadRegistros();
-        void buscarRelacionPorCuit();
+        void buscarRelacionPorCuit(std::string cuit);
 };
 
 #endif // PROVEEDORPRODUCTOMANAGER_H_INCLUDED

@@ -82,16 +82,17 @@ Producto ArchivoProducto::leer(int pos){
 
     return reg;
 }
-int ArchivoProducto::buscarPorID(int idBuscado) {
+bool ArchivoProducto::buscarPorID(int id, Producto& registro) {
     Producto prod;
     int cantidad = CantidadRegistros();
     for(int i = 0; i < cantidad; i++) {
         prod = leer(i);
-        if(prod.getIdProducto() == idBuscado ) {
-            return i;
+        if(prod.getIdProducto() == id) {
+            registro = prod;
+            return true;
         }
     }
-    return -1;
+    return false;
 }
 int ArchivoProducto::ObtenerUltimoId() {
     int cantidad = CantidadRegistros();

@@ -13,7 +13,7 @@ class ArchivoProducto{
         bool guardar(Producto registro, int posicion);
         int CantidadRegistros();
         Producto leer(int pos);
-        int buscarPorID(int id);
+        bool buscarPorID(int id, Producto& registro);
         int ObtenerUltimoId();
 };
 

@@ -9,6 +9,8 @@ public:
     void listarProductos();
     void eliminarProducto();
     void activarProducto();
+    bool BuscarProductoPorId(int idProducto);
+
 };
 
 #endif // PRODUCTOMANAGER_H_INCLUDED

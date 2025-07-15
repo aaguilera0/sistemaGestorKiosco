@@ -102,7 +102,7 @@
 	"CompraManager.h"
 	<limits>
 
-1752199938 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.h
+1752612222 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.h
 
 1749609992 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedor.cpp
 	"Proveedor.h"
@@ -126,10 +126,11 @@
 	<cstring>
 	<string>
 
-1752501047 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1752612662 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
 	"Menu.h"
 	"ProveedorManager.h"
+	"ProveedorProductoManager.h"
 	"ProductoManager.h"
 	"CategoriaManager.h"
 	<iostream>
@@ -194,13 +195,13 @@
 1750080088 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\detallecompra.cpp
 	"DetalleCompra.h"
 
-1752534472 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
+1752612143 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.cpp
 	<iostream>
 	<cstring>
 	"Producto.h"
 	"ArchivoProducto.h"
 
-1752534287 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.h
+1752612143 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\archivoproducto.h
 	"Producto.h"
 
 1750187942 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\compramanager.h
@@ -380,9 +381,9 @@
 
 1750249486 shed changes
 
-1752500018 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
+1752611693 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
 
-1752534770 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
+1752612758 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
 	<iostream>
 	"Producto.h"
 	"Categoria.h"
@@ -398,14 +399,14 @@
 	<string>
 	"RelacionProveedorProducto.h"
 
-1752248622 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
+1752612960 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
 	<iostream>
 	"RelacionProveedorProducto.h"
 	"ArchivoProveedorProducto.h"
 	"ProveedorProductoManager.h"
 	<string>
 
-1752245991 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.h
+1752612679 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.h
 
 1752535321 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\categoriamanager.cpp
 	<iostream>

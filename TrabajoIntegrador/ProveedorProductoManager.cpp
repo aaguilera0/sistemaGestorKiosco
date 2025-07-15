@@ -9,7 +9,7 @@ using namespace std;
 void ProveedorProductoManager::cargarNuevaRelacion(string cuitProveedor, int idProducto) {
     ArchivoProveedorProducto pArchivo("ArchivoProveedorProducto.dat");
 
-    int nuevoId = pArchivo.ObtenerUltimoId();
+    int nuevoId = pArchivo.ObtenerUltimoId()+1;
     RelacionProveedorProducto relacion(nuevoId, cuitProveedor, idProducto);
 
     if (pArchivo.Guardar(relacion)) {
@@ -83,20 +83,16 @@ void ProveedorProductoManager::listar() {
         cout << registro.toCSV() << endl;
     }
 }
-void ProveedorProductoManager::buscarRelacionPorCuit() {
+void ProveedorProductoManager::buscarRelacionPorCuit(string cuit) {
     ArchivoProveedorProducto pArchivo("ArchivoProveedorProducto.dat");
     int cantidad = pArchivo.CantidadRegistros();
 
     RelacionProveedorProducto* coincidencias = new RelacionProveedorProducto[cantidad];
 
-    string cuitStr;
-    cout << "Ingrese el CUIT del proveedor: ";
-    cin >> cuitStr;
-
-    if (pArchivo.BuscarPorCuit(cantidad, coincidencias, cuitStr)) {
+    if (pArchivo.BuscarPorCuit(cantidad, coincidencias, cuit)) {
         cout << "Coincidencias encontradas. Relaciones:\n";
         for (int i = 0; i < cantidad; i++) {
-            cout << "ID Relación: " << coincidencias[i].getIdProveedorProducto() << endl;
+            cout << "ID Relacion: " << coincidencias[i].getIdProveedorProducto() << endl;
             cout << "CUIT: " << coincidencias[i].getCuitProveedor() << endl;
             cout << "ID Producto: " << coincidencias[i].getIdProducto() << endl;
             cout << "-------------------------------" << endl;

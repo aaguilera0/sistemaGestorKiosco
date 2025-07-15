@@ -1,6 +1,7 @@
 #include "Funciones.h"
 #include "Menu.h"
 #include "ProveedorManager.h"
+#include "ProveedorProductoManager.h"
 #include "ProductoManager.h"
 #include "CategoriaManager.h"
 #include <iostream>
@@ -58,12 +59,12 @@ void menuProveedores(){
             break;}
         case 6:{
             system("cls");
-            //buscamos el proveedor
+            ProveedorProductoManager ProvProdManager;
             string cuit;
             cout << "ingrese el cuit del proveedor" << endl;
             cin >> cuit;
             if(manager.BuscarProveedorPorCuit(cuit)){
-
+                    ProvProdManager.buscarRelacionPorCuit(cuit);
             }else{
                 cout << "proveedor no encontrado" << endl;
             }
