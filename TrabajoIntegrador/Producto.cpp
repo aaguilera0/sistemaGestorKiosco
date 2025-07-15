@@ -11,12 +11,13 @@ using namespace std;
         _precioUnitario = 0.0f;
         _estado = true;
     }
-    Producto::Producto(int idProducto, int idCategoria, int stock, float precioUnitario, bool estado){
+    Producto::Producto(int idProducto, int idCategoria, int stock, float precioUnitario, bool estado, std::string nombre){
         setIdProducto(idProducto);
         setIdCategoria(idCategoria);
         setStock(stock);
         setPrecioUnitario(precioUnitario);
         setEstado(estado);
+        setNombre(nombre);
     }
     int Producto :: getIdProducto(){
         return _idProducto;
@@ -32,6 +33,9 @@ using namespace std;
     }
     bool Producto :: getEstado(){
         return _estado;
+    }
+    string Producto::getNombre(){
+        return string(_nombre);
     }
     void Producto :: setIdProducto(int idProducto){
         _idProducto = idProducto;

@@ -126,7 +126,7 @@
 	<cstring>
 	<string>
 
-1752612662 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
+1752618529 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.cpp
 	"Funciones.h"
 	"Menu.h"
 	"ProveedorManager.h"
@@ -140,12 +140,12 @@
 	<cstring>
 	<string>
 
-1751548179 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.cpp
+1752618894 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.cpp
 	<iostream>
 	<cstring>
 	"Producto.h"
 
-1751548179 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.h
+1752618761 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.h
 	<string>
 
 1752323740 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
@@ -381,9 +381,10 @@
 
 1750249486 shed changes
 
-1752611693 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
+1752618495 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
+	"Producto.h"
 
-1752612758 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
+1752619095 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
 	<iostream>
 	"Producto.h"
 	"Categoria.h"
@@ -399,14 +400,16 @@
 	<string>
 	"RelacionProveedorProducto.h"
 
-1752612960 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
+1752618470 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.cpp
 	<iostream>
 	"RelacionProveedorProducto.h"
 	"ArchivoProveedorProducto.h"
 	"ProveedorProductoManager.h"
+	"ProductoManager.h"
+	"Producto.h"
 	<string>
 
-1752612679 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.h
+1752618216 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedorproductomanager.h
 
 1752535321 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\categoriamanager.cpp
 	<iostream>

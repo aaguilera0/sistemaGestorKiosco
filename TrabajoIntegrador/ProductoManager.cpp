@@ -264,14 +264,13 @@ void ProductoManager :: eliminarProducto()
     }
 
 }
-bool ProductoManager::BuscarProductoPorId(int IdProducto){
+bool ProductoManager::BuscarProductoPorId(int IdProducto, Producto& productoEncontrado){
     ArchivoProducto pArchivo;
     Producto registro;
     if(pArchivo.buscarPorID(IdProducto, registro)){
-        cout << "producto encontrado" << endl;
+        productoEncontrado=registro;
         return true;
     }else{
-        cout << "producto no encontrado" << endl;
         return false;
     }
 

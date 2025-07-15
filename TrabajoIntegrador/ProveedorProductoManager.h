@@ -8,7 +8,7 @@ class ProveedorProductoManager{
         void eliminarRelacion();
         void listar();
         void mostrarCantidadRegistros();
-        void buscarRelacionPorCuit(std::string cuit);
+        void buscarRelacionesPorCuit(std::string cuit);
 };
 
 #endif // PROVEEDORPRODUCTOMANAGER_H_INCLUDED

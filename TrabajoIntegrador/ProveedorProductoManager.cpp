@@ -2,8 +2,10 @@
 #include "RelacionProveedorProducto.h"
 #include "ArchivoProveedorProducto.h"
 #include "ProveedorProductoManager.h"
+#include "ProductoManager.h"
+#include "Producto.h"
 #include <string>
-
+#include <iomanip>
 using namespace std;
 
 void ProveedorProductoManager::cargarNuevaRelacion(string cuitProveedor, int idProducto) {
@@ -83,19 +85,23 @@ void ProveedorProductoManager::listar() {
         cout << registro.toCSV() << endl;
     }
 }
-void ProveedorProductoManager::buscarRelacionPorCuit(string cuit) {
-    ArchivoProveedorProducto pArchivo("ArchivoProveedorProducto.dat");
-    int cantidad = pArchivo.CantidadRegistros();
 
+void ProveedorProductoManager::buscarRelacionesPorCuit(string cuit) {
+    ArchivoProveedorProducto pArchivo("ArchivoProveedorProducto.dat");
+    ProductoManager prodManager;
+    int cantidad = pArchivo.CantidadRegistros();
+    Producto producto;
     RelacionProveedorProducto* coincidencias = new RelacionProveedorProducto[cantidad];
 
     if (pArchivo.BuscarPorCuit(cantidad, coincidencias, cuit)) {
-        cout << "Coincidencias encontradas. Relaciones:\n";
         for (int i = 0; i < cantidad; i++) {
-            cout << "ID Relacion: " << coincidencias[i].getIdProveedorProducto() << endl;
-            cout << "CUIT: " << coincidencias[i].getCuitProveedor() << endl;
-            cout << "ID Producto: " << coincidencias[i].getIdProducto() << endl;
-            cout << "-------------------------------" << endl;
+            prodManager.BuscarProductoPorId(coincidencias[i].getIdProducto(), producto);
+            cout << "IdProducto: " << producto.getIdProducto() << endl;
+            cout << "Nombre Producto: " << producto.getNombre() << endl;
+            cout << "Precio unitario: " << producto.getPrecioUnitario() << endl;
+            cout << "Stock: " << producto.getStock() << endl;
+            cout << endl;
+            cout << endl;
         }
     } else {
         cout << "Coincidencias no encontradas.\n";

@@ -64,7 +64,10 @@ void menuProveedores(){
             cout << "ingrese el cuit del proveedor" << endl;
             cin >> cuit;
             if(manager.BuscarProveedorPorCuit(cuit)){
-                    ProvProdManager.buscarRelacionPorCuit(cuit);
+                    cout << "PRODUCTOS DEL PROVEEDOR CON CUIT: " << cuit << endl;
+                    cout << endl;
+                    ProvProdManager.buscarRelacionesPorCuit(cuit);
+                    cout << endl;
             }else{
                 cout << "proveedor no encontrado" << endl;
             }

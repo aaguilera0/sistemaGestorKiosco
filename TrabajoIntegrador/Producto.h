@@ -13,7 +13,7 @@ private:
     char _nombre[30];
 public:
     Producto();
-    Producto(int idProducto, int idCategoria, int stock, float precioUnitario, bool estado);
+    Producto(int idProducto, int idCategoria, int stock, float precioUnitario, bool estado, std::string nombre);
 
     int getIdProducto();
     int getIdCategoria();
