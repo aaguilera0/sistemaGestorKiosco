@@ -11,5 +11,7 @@ class ProveedorManager{
         void mostrarCantidadRegistros();
         bool BuscarProveedorPorCuit();
         bool BuscarProveedorPorCuit(std::string cuit);
+        void verProductosAsociados();
+        void desactivarProveedor();
 };
 #endif // PROVEEDORANAGER_H_INCLUDED
