@@ -19,7 +19,7 @@ void Menu::mostrarMenuPrincipal()
         cout << "[2] Ver compras realizadas" << endl;
         cout << "[3] Gestion de proveedores y sus productos" << endl;
         cout << "[4] Gestion de productos y categorias" << endl;
-        cout << "[5] Configuraciones e informes" << endl;
+        cout << "[5] Sistema e informes" << endl;
         cout << "[0] Salir" << endl;
         cout << "-------------------------------" << endl;
         cout << "Ingrese una opcion: ";
@@ -51,8 +51,9 @@ void Menu::mostrarMenuPrincipal()
                 cout << "Gestion de productos y categorias..." << endl;
                 break;
             case 5:
-                // configuracionesEInformes();
-                cout << "Configuraciones e informes..." << endl;
+                // sistemaEInformes();
+                menuSistemaEInformes();
+                cout << "Sistema e informes..." << endl;
                 break;
             case 0:
                 cout << "Saliendo del sistema..." << endl;
