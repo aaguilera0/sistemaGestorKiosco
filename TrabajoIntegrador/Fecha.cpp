@@ -1,5 +1,5 @@
 #include "Fecha.h"
-
+#include <ctime>
 Fecha::Fecha(){
     _dia = 0;
     _mes = 0;
@@ -38,4 +38,15 @@ void Fecha::setAnio(int anio){
 
 std::string Fecha::toString(){
     return std::to_string(_dia) + "/" + std::to_string(_mes) + "/" + std::to_string(_anio);
+}
+void Fecha::FechaActual(){
+    time_t now = time(0);                 // tiempo actual en segundos desde Epoch
+    tm* localTime = localtime(&now);      // convertir a tiempo local
+
+    int dia = localTime->tm_mday;         // día del mes [1, 31]
+    int mes = localTime->tm_mon + 1;      // mes [0, 11] → sumamos 1
+    int anio = localTime->tm_year + 1900; // años desde 1900
+    setDia(dia);
+    setMes(mes);
+    setAnio(anio);
 }
