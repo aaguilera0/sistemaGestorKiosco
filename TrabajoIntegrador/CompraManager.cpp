@@ -1,38 +1,93 @@
 #include <iostream>
 #include "CompraManager.h"
+#include "ProveedorProductoManager.h"
+#include "ProveedorManager.h"
+#include "ProductoManager.h"
+#include "DetalleCompra.h"
+#include "ArchivoDetalleCompra.h"
 #include "Compra.h"
 #include "ArchivoCompra.h"
 #include <ctime>
 #include <string>
+#include <cstdlib>
 using namespace std;
 
 void CompraManager::cargarNuevaCompra() {
-    Compra nuevaCompra;
     ArchivoCompra archivo("compras.dat");
-
+    archivoDetalleCompra archDetalle("Detalles.DAT");
+    Compra nuevaCompra;
+    ProductoManager prodManager;
+    ProveedorProductoManager ProvProdManager;
+    ProveedorManager proveedorManager;
+    DetalleCompra* detallesCompra;
+    Fecha fechaActual;
+    string cuit;
+    int acuPrecio=0;
+    int acuStock=0;
+    int cantProducto=0;
     int nuevoId = archivo.ObtenerUltimoId() + 1;
     nuevaCompra.setIdCompra(nuevoId);
 
-    cout << "CUIT del proveedor: ";
-    string cuit;
+    cout << "ingrese CUIT del proveedor: ";
     cin >> cuit;
-    nuevaCompra.setCuitProveedor(cuit);
+    if(proveedorManager.BuscarProveedorPorCuit(cuit)){
+        system("cls");
+        nuevaCompra.setCuitProveedor(cuit);
+        fechaActual.FechaActual();
+        nuevaCompra.setFechaCompra(fechaActual.getDia(), fechaActual.getMes(), fechaActual.getAnio());
 
-    time_t now = time(0);                 // tiempo actual en segundos desde Epoch
-    tm* localTime = localtime(&now);      // convertir a tiempo local
+        cout << "PRODUCTOS CARGADOS DEL PROVEEDOR CON CUIT: " << cuit << endl;
+        cout << endl;
+        ProvProdManager.buscarRelacionesPorCuit(cuit);
+        cout << endl;
+        cout << "Ingrese la cantidad total de Productos diferentes que desea comprar" << endl;
+        cin >> cantProducto;
 
-    int dia = localTime->tm_mday;         // día del mes [1, 31]
-    int mes = localTime->tm_mon + 1;      // mes [0, 11] → sumamos 1
-    int anio = localTime->tm_year + 1900; // años desde 1900
-
-    cout << "Fecha Actual: " << to_string(dia) << "/" << to_string(mes) << "/" << to_string(anio) << endl;;
-
-    nuevaCompra.setFechaCompra(dia, mes, anio);
-
-    if (archivo.Guardar(nuevaCompra)) {
-        cout << "Compra guardada exitosamente con ID: " << nuevoId << endl;
-    } else {
-        cout << "Error al guardar la compra." << endl;
+        detallesCompra = new DetalleCompra[cantProducto];
+        for(int i=0; i<cantProducto; i++){
+            DetalleCompra detalle;
+            int idProducto, cantidad;
+            cout << "cargando " << (i+1) << " de " << cantProducto << " productos" << endl;
+            cout << "ingrese el id producto" << endl;
+            cin >> idProducto;
+            cout << "ingrese la cantidad del producto a comprar" << endl;
+            cin >> cantidad;
+            acuStock+=cantidad;
+            detalle.setIdDetalle(archDetalle.ObtenerUltimoId()+(i+1));
+            detalle.setIdCompra(nuevaCompra.getIdCompra());
+            detalle.setIdProducto(idProducto);
+            detalle.setPrecioUnitario(prodManager.obtenerPrecio(idProducto));
+            detalle.setCantidad(cantidad);
+            detallesCompra[i]=detalle;
+            acuPrecio+=(prodManager.obtenerPrecio(idProducto)*cantidad);
+        }
+        system("cls");
+        cout << "RESUMEN" << endl;
+        cout << "Fecha: " << fechaActual.toString() << endl;
+        cout << "CUIT PROVEEDOR: " << cuit << endl;
+        cout << "CANTIDAD DE PRESENTACIONES: " << cantProducto << endl;
+        cout << "CANTIDAD TOTAL DE INGRESO AL STOCK: " << acuStock << endl;
+        cout << "IMPORTE FINAL: $" << acuPrecio << endl;
+        cout << "presione 1 para finalizar compra. CERO para borrar." << endl;
+        //system("cls");
+        nuevaCompra.setImporte(acuPrecio);
+        int opcion=0;
+        cin >> opcion;
+        if(opcion==1){
+            if (archivo.Guardar(nuevaCompra)) {
+            for(int i=0;i<cantProducto; i++){
+                archDetalle.Guardar(detallesCompra[i]);
+            }
+            cout << "Compra guardada exitosamente con ID: " << nuevoId << endl;
+            } else {
+                cout << "Error al guardar la compra." << endl;
+            }
+        }
+        else{
+            cout << "compra borrada" << endl;
+        }
+    }else{
+        cout << "Proveedor no encontrado" << endl;
     }
 }
 

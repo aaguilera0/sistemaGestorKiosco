@@ -275,4 +275,12 @@ bool ProductoManager::BuscarProductoPorId(int IdProducto, Producto& productoEnco
     }
 
 }
-
+float ProductoManager::obtenerPrecio(int idProducto){
+    ArchivoProducto pArchivo;
+    Producto registro;
+    if(pArchivo.buscarPorID(idProducto, registro)){
+        return registro.getPrecioUnitario();
+    }else{
+        return 0;
+    }
+}

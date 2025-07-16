@@ -82,10 +82,11 @@
 1752535018 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\categoria.h
 	<string>
 
-1750207056 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.cpp
+1752670253 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.cpp
 	"Fecha.h"
+	<ctime>
 
-1750207064 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.h
+1752670058 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\fecha.h
 	<string>
 
 1750194474 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\main.cpp
@@ -94,12 +95,13 @@
 
 1750195568 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\menu.h
 
-1751551093 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\menu.cpp
+1752668996 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\menu.cpp
 	<iostream>
 	<cctype>
 	"Menu.h"
 	"Funciones.h"
 	"CompraManager.h"
+	"DetalleCompraManager.h"
 	<limits>
 
 1752612222 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\funciones.h
@@ -136,7 +138,7 @@
 	<iostream>
 	<limits>
 
-1752323853 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.h
+1752671465 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.h
 	<cstring>
 	<string>
 
@@ -148,7 +150,7 @@
 1752618761 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\producto.h
 	<string>
 
-1752323740 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
+1752671465 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\proveedormanager.cpp
 	<iostream>
 	"Proveedor.h"
 	"ProveedorArchivo.h"
@@ -208,11 +210,19 @@
 
 1750187942 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\detallecompramanager.h
 
-1750206630 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\compramanager.cpp
+1752673656 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\compramanager.cpp
 	<iostream>
 	"CompraManager.h"
+	"ProveedorProductoManager.h"
+	"ProveedorManager.h"
+	"ProductoManager.h"
+	"DetalleCompra.h"
+	"ArchivoDetalleCompra.h"
 	"Compra.h"
 	"ArchivoCompra.h"
+	<ctime>
+	<string>
+	<cstdlib>
 
 1750190160 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\detallecompramanager.cpp
 	<iostream>
@@ -381,10 +391,10 @@
 
 1750249486 shed changes
 
-1752618495 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
+1752671814 c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.h
 	"Producto.h"
 
-1752619095 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
+1752672129 source:c:\users\sysuser\documents\github\sistemagestorkiosco\trabajointegrador\productomanager.cpp
 	<iostream>
 	"Producto.h"
 	"Categoria.h"

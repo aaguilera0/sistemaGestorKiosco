@@ -10,7 +10,7 @@ public:
     void eliminarProducto();
     void activarProducto();
     bool BuscarProductoPorId(int idProducto, Producto& productoEncontrado);
-
+    float obtenerPrecio(int idProducto);
 };
 
 #endif // PRODUCTOMANAGER_H_INCLUDED

@@ -5,7 +5,6 @@
 #include "ProductoManager.h"
 #include "Producto.h"
 #include <string>
-#include <iomanip>
 using namespace std;
 
 void ProveedorProductoManager::cargarNuevaRelacion(string cuitProveedor, int idProducto) {

@@ -3,6 +3,7 @@
 #include "Menu.h"
 #include "Funciones.h"
 #include "CompraManager.h"
+#include "DetalleCompraManager.h"
 #include <limits>
 using namespace std;
 CompraManager compraManager;
@@ -33,9 +34,12 @@ void Menu::mostrarMenuPrincipal()
                 break;
             case 2:
                 // verComprasRealizadas();
+                int idCompra;
 
+                DetalleCompraManager detalleManager;
                 cout << "Ver compras realizadas..." << endl;
                 compraManager.listarCompras();
+                detalleManager.listarDetallesDeCompra();
                 break;
             case 3:
                 // gestionProveedores();
