@@ -4,6 +4,8 @@
 #include "ProveedorProductoManager.h"
 #include "ProductoManager.h"
 #include "CategoriaManager.h"
+#include "CompraManager.h"
+#include "ArchivoProducto.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -201,7 +203,120 @@ void menuCategoria(){
             system("cls");
             return;
         default:
-            cout << "INTENTA NUEVAMENTE, POR FAVOR." << endl;
+            cout << "INTENTE NUEVAMENTE, POR FAVOR." << endl;
+            return;
+        }
+}while(true);
+}
+void menuSistemaEInformes(){
+    int opc;
+
+    system("cls");
+
+    do
+    {
+        cout << "--------- MENU DE SISTEMA E INFORMES ---------" << endl;
+        cout << endl;
+        cout << "1- INFORMACION DEL SISTEMA" << endl;
+        cout << "2- INFORMES" << endl;
+        cout << "0- SALIR" << endl;
+        cin >> opc;
+        if (cin.fail())
+        {
+            cin.clear(); // Limpia el error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta entrada inv lida
+            cout << "Error: Solo se permiten numeros.\n";
+            continue;
+        }
+
+        switch(opc)
+        {
+
+        case 1:
+            system("cls");
+            menuSistema();
+            break;
+        case 2:
+            system("cls");
+            //menuInformes();
+            break;
+        case 0:
+            system("cls");
+            return;
+        default:
+            cout << "INTENTE NUEVAMENTE, POR FAVOR." << endl;
+            return;
+        }
+}while(true);
+
+}
+
+void menuSistema(){
+    int opc, cantidad;
+    ProductoManager managerPROD;
+    ProveedorManager managerPROV;
+    CompraManager managerCOMP;
+
+    ArchivoProducto archivoP;
+    Producto producto;
+
+    system("cls");
+
+    do
+    {
+        cout << "--------- MENU SISTEMA ---------" << endl;
+        cout << endl;
+        cout << "1- VERSION DEL SOFTWARE" << endl;
+        cout << "2- CANTIDAD TOTAL DE REGISTROS EN ARCHIVOS" << endl;
+        cout << "0- SALIR" << endl;
+        cin >> opc;
+        if (cin.fail())
+        {
+            cin.clear(); // Limpia el error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta entrada inv lida
+            cout << "Error: Solo se permiten numeros.\n";
+            continue;
+        }
+
+        switch(opc)
+        {
+
+        case 1:
+            system("cls");
+            cout << "VERSION DEL SOFTWARE: V 0.2.9" << endl;
+            cout << endl << endl;
+            cout << "ULTIMA ACTUALIZACION: 16/07/2025" << endl;
+            break;
+        case 2:
+            system("cls");
+            cout << "------ TOTAL DE REGISTROS ------" << endl;
+            cout << endl << endl;
+            cout << "--PRODUCTOS--" << endl;
+            managerPROD.mostrarCantidadRegistros();
+            cout << endl;
+            cout << "--PROVEEDORES--" << endl;
+            managerPROV.mostrarCantidadRegistros();
+            cout << endl;
+            cout << "--CANTIDAD DE COMPRAS--" << endl;
+            managerCOMP.mostrarCantidadRegistros();
+            cout << endl << endl;
+            cout << "--STOCK DE ARTICULOS--" << endl;
+
+            cantidad = archivoP.CantidadRegistros();
+
+            for(int i = 0; i < cantidad; i++){
+            producto = archivoP.leer(i);
+
+            if(producto.getEstado()){
+                cout << producto.getNombre() << " - Stock: " << producto.getStock() << endl;
+            }
+        }
+            break;
+        case 0:
+            system("cls");
+            return;
+        default:
+            cout << "INTENTE NUEVAMENTE, POR FAVOR." << endl;
             return;
         }
 }while(true);
