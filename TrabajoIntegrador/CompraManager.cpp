@@ -147,12 +147,26 @@ void CompraManager::listarCompras() {
 
     for (int i = 0; i < total; i++) {
         Compra compra = archivo.Leer(i);
-        if (compra.getCuitProveedor() != "ELIMINADO") {
+            cout << "ID: " << compra.getIdCompra()
+                 << " | CUIT: " << compra.getCuitProveedor()
+                 << " | Fecha: " << compra.getFechaCompra().toString() << endl;
+    }
+}
+bool CompraManager::listarComprasPorFecha(std::string fecha) {
+    ArchivoCompra archivo("compras.dat");
+    int total = archivo.CantidadRegistros();
+    bool flag=false;
+    for (int i = 0; i < total; i++) {
+        Compra compra = archivo.Leer(i);
+        if(compra.getFechaCompra().toString()==fecha){
+                flag=true;
             cout << "ID: " << compra.getIdCompra()
                  << " | CUIT: " << compra.getCuitProveedor()
                  << " | Fecha: " << compra.getFechaCompra().toString() << endl;
         }
     }
+    if(flag){return true;}
+    else{return false;}
 }
 
 void CompraManager::mostrarCantidadRegistros() {

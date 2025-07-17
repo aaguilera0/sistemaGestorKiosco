@@ -94,12 +94,14 @@ void DetalleCompraManager::listarDetalles() {
 
     for (int i = 0; i < total; i++) {
         DetalleCompra det = archivo.Leer(i);
-        if (det.getIdProducto() != -1) { // no mostrar eliminados
+        if (det.getIdProducto() != -1) {
+            cout << "----------------------------------------------" << endl;
+            cout << endl;
             cout << "ID Detalle: " << det.getIdDetalle()
                  << " | ID Compra: " << det.getIdCompra()
                  << " | ID Producto: " << det.getIdProducto()
                  << " | Cantidad: " << det.getCantidad()
-                 << " | Precio: " << det.getPrecio() << endl;
+                 << " | Precio: $" << det.getPrecio() << endl;
         }
     }
 }
@@ -116,10 +118,12 @@ void DetalleCompraManager::listarDetallesDeCompra() {
     for (int i = 0; i < total; i++) {
         DetalleCompra det = archivo.Leer(i);
         if (det.getIdCompra() == idCompra && det.getIdProducto() != -1) {
+            cout << "----------------------------------------------" << endl;
             cout << "ID Detalle: " << det.getIdDetalle()
                  << " | ID Producto: " << det.getIdProducto()
                  << " | Cantidad: " << det.getCantidad()
-                 << " | Precio: " << det.getPrecio() << endl;
+                 << " | Precio: $" << det.getPrecio() << endl;
+            cout << "----------------------------------------------" << endl;
             encontrado = true;
         }
     }

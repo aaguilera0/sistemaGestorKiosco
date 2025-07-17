@@ -7,7 +7,8 @@ public:
     void modificarCompra();                // Modificar datos de una compra existente
     void eliminarCompra();                 // Marcar una compra como eliminada (o borrado físico)
     void listarCompras();                  // Mostrar todas las compras
-    void mostrarCantidadRegistros();       // Mostrar cuántas compras hay guardadas
+    void mostrarCantidadRegistros();
+    bool listarComprasPorFecha(std::string fecha);
 };
 
 #endif // COMPRAMANAGER_H_INCLUDED
