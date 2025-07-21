@@ -375,6 +375,11 @@ void informeProveedoresFrecuentes(){
     int contador[PROV]={};
     string cuitProveedor[PROV]={};
 
+    if (archivoC.CantidadRegistros() == 0) {
+        cout << "No hay compras registradas." << endl;
+        return;
+    }
+
     for(int i=0;i<cantidad;i++){
         bool existe = false;
         compra = archivoC.Leer(i);
@@ -410,6 +415,11 @@ void informeProductosMasComprados() {
     int total = 0, cantidad = archivoDetalle.CantidadRegistros();
     int idProducto[PROD]={};
     int cantidadComprada[PROD]={};
+
+    if (archivoDetalle.CantidadRegistros() == 0) {
+    cout << "No hay compras registradas." << endl;
+    return;
+    }
 
     for (int i=0;i<cantidad;i++) {
         bool existe = false;

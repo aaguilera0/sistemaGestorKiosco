@@ -45,22 +45,58 @@ bool Proveedor::getEstado(){
 //TENGO QUE AGREGAR VALIDACIONES EN LOS SETTERS.
 
 void Proveedor::setCuit(std::string cuit){
+    if(cuit.size()<11){
     strcpy(_cuit,cuit.c_str());
+  }
+  else {
+        cout << "Error: CUIT demasiado largo." << endl;
+        strcpy(_cuit, "");
+    }
 }
 void Proveedor::setNombre(std::string nombre){
+    if(nombre.size() < 50){
     strcpy(_nombre,nombre.c_str());
+  }
+  else {
+        cout << "Error: NOMBRE demasiado largo." << endl;
+        strcpy(_nombre, "");
+    }
 }
 void Proveedor::setApellido(std::string apellido){
+    if(apellido.size() < 50){
     strcpy(_apellido,apellido.c_str());
+  }
+  else {
+        cout << "Error: APELLIDO demasiado largo." << endl;
+        strcpy(_apellido, "");
+    }
 }
 void Proveedor::setNumeroTelefono(int numTelefono){
-    _numTelefono = numTelefono;
+    if(numTelefono > 100000 && numTelefono < 99999999999){
+        _numTelefono = numTelefono;
+    }
+    else {
+        cout << "Numero de telefono invalido." << endl;
+        _numTelefono = 0;
+  }
 }
 void Proveedor::setMail(std::string mail){
+    if(mail.size()<60){
     strcpy(_mail,mail.c_str());
+  }
+  else {
+        cout << "Error: MAIL demasiado largo." << endl;
+        strcpy(_mail, "");
+    }
 }
 void Proveedor::setDireccion(std::string direccion){
+    if(direccion.size()<50){
     strcpy(_direccion,direccion.c_str());
+  }
+  else {
+        cout << "Error: DIRECCION demasiado larga." << endl;
+        strcpy(_direccion, "");
+    }
 }
 void Proveedor::setEstado(bool estado){
     _estado = estado;
