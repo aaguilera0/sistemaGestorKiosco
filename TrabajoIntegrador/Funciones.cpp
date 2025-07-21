@@ -6,6 +6,8 @@
 #include "CategoriaManager.h"
 #include "CompraManager.h"
 #include "ArchivoProducto.h"
+#include "ArchivoCompra.h"
+#include "ArchivoDetalleCompra.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -238,7 +240,7 @@ void menuSistemaEInformes(){
             break;
         case 2:
             system("cls");
-            //menuInformes();
+            menuInformes();
             break;
         case 0:
             system("cls");
@@ -320,4 +322,118 @@ void menuSistema(){
             return;
         }
 }while(true);
+}
+
+void menuInformes(){
+    int opc;
+
+    system("cls");
+
+    do
+    {
+        cout << "--------- MENU INFORMES ---------" << endl;
+        cout << endl;
+        cout << "1- PROVEEDORES MAS FRECUENTES" << endl;
+        cout << "2- PRODUCTOS MAS COMPRADOS" << endl;
+        cout << "0- SALIR" << endl;
+        cin >> opc;
+        if (cin.fail())
+        {
+            cin.clear(); // Limpia el error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta entrada inv lida
+            cout << "Error: Solo se permiten numeros.\n";
+            continue;
+        }
+
+        switch(opc)
+        {
+
+        case 1:
+            system("cls");
+            informeProveedoresFrecuentes();
+            break;
+        case 2:
+            system("cls");
+            informeProductosMasComprados();
+            break;
+        case 0:
+            system("cls");
+            return;
+        default:
+            cout << "INTENTE NUEVAMENTE, POR FAVOR." << endl;
+            return;
+        }
+}while(true);
+}
+
+void informeProveedoresFrecuentes(){
+    ArchivoCompra archivoC("compras.dat");
+    Compra compra;
+
+    const int PROV = 50;
+    int total = 0, cantidad = archivoC.CantidadRegistros();
+    int contador[PROV]={};
+    string cuitProveedor[PROV]={};
+
+    for(int i=0;i<cantidad;i++){
+        bool existe = false;
+        compra = archivoC.Leer(i);
+        string cuit = compra.getCuitProveedor();
+
+        for(int z=0;z<total;z++){
+            if(cuitProveedor[z] == cuit){
+                contador[z]++;
+                existe = true;
+                break;
+            }
+        }
+
+        if(!existe && total < PROV){
+            cuitProveedor[total] = cuit;
+            contador[total] = 1;
+            total++;
+        }
+    }
+
+    cout << " ---  PROVEEDORES MAS FRECUENTES  --- " << endl;
+    cout << endl << endl;
+    for(int i = 0; i < total; i++){
+        cout << "CUIT: " << cuitProveedor[i] << " - COMPRAS: " << contador[i] << endl;
+    }
+}
+
+void informeProductosMasComprados() {
+    archivoDetalleCompra archivoDetalle("detallecompras.dat");
+    DetalleCompra detalle;
+
+    const int PROD = 100;
+    int total = 0, cantidad = archivoDetalle.CantidadRegistros();
+    int idProducto[PROD]={};
+    int cantidadComprada[PROD]={};
+
+    for (int i=0;i<cantidad;i++) {
+        bool existe = false;
+        detalle = archivoDetalle.Leer(i);
+        int idProd = detalle.getIdProducto();
+
+        for (int z=0;z<total;z++) {
+            if (idProducto[z]==idProd) {
+                cantidadComprada[z]+= detalle.getCantidad();
+                existe = true;
+                break;
+            }
+        }
+
+        if (!existe && total < PROD) {
+            idProducto[total] = idProd;
+            cantidadComprada[total] = detalle.getCantidad();
+            total++;
+        }
+    }
+
+    cout << " ---  PRODUCTOS MAS COMPRADOS A PROVEEDORES  --- " << endl;
+    cout << endl << endl;
+    for (int i = 0; i < total; i++) {
+        cout << "ID PRODUCTO: " << idProducto[i] << " - CANTIDAD TOTAL COMPRADA: " << cantidadComprada[i] << endl;
+    }
 }

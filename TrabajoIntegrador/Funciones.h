@@ -8,4 +8,7 @@ void menuSistemaEInformes();
 //--------- SUBMENUS ---------
 void menuSistema();
 void menuInformes();
+//------
+void informeProveedoresFrecuentes();
+void informeProductosMasComprados();
 #endif // FUNCIONES_H_INCLUDED
