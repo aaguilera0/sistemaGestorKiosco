@@ -19,7 +19,7 @@ void CompraManager::cargarNuevaCompra() {
     ProductoManager prodManager;
     ProveedorProductoManager ProvProdManager;
     ProveedorManager proveedorManager;
-    DetalleCompra* detallesCompra;
+    DetalleCompra* detallesCompra = nullptr;
     Fecha fechaActual;
     string cuit;
     int acuPrecio=0;
@@ -89,6 +89,7 @@ void CompraManager::cargarNuevaCompra() {
     }else{
         cout << "Proveedor no encontrado" << endl;
     }
+    delete[] detallesCompra;
 }
 
 void CompraManager::modificarCompra() {

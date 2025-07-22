@@ -24,10 +24,10 @@ void menuProveedores(){
         cout << endl;
         cout << "1- AGREGAR PROVEEDORES" << endl;
         cout << "2- MODIFICAR PROVEEDORES" << endl;
-        cout << "3- ELIMINAR PROVEEDORES" << endl;
+        cout << "3- DESACTIVAR PROVEEDORES" << endl;
         cout << "4- LISTAR PROVEEDORES" << endl;
         cout << "5- MOSTRAR CANTIDAD DE REGISTROS" << endl;
-        cout << "6- SELECCIONAR UN PROVEEDOR" << endl;
+        cout << "6- VER PRODUCTOS DE UN PROVEEDOR" << endl;
         cout << "0- SALIR" << endl;
         cin >> opc;
         if (cin.fail())
@@ -51,7 +51,7 @@ void menuProveedores(){
             break;}
         case 3:{
             system("cls");
-            //manager.eliminarProveedor();
+            manager.desactivarProveedor();
             break;}
         case 4:{
             system("cls");

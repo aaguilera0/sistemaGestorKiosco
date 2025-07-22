@@ -1,5 +1,6 @@
 #include "Proveedor.h"
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 Proveedor::Proveedor(){
@@ -45,13 +46,7 @@ bool Proveedor::getEstado(){
 //TENGO QUE AGREGAR VALIDACIONES EN LOS SETTERS.
 
 void Proveedor::setCuit(std::string cuit){
-    if(cuit.size()<11){
     strcpy(_cuit,cuit.c_str());
-  }
-  else {
-        cout << "Error: CUIT demasiado largo." << endl;
-        strcpy(_cuit, "");
-    }
 }
 void Proveedor::setNombre(std::string nombre){
     if(nombre.size() < 50){

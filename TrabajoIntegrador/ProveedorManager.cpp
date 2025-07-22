@@ -20,7 +20,10 @@ void ProveedorManager::cargarNuevoProveedor(){
 
     cout << "INGRESE CUIT: " << endl;
     getline(cin, cuit);
-
+    if(cuit.size()>11){
+        cout << "EL CUIT ES DEMASIADO LARGO." << endl;
+        return;
+    }
     for(int i=0;i<cantidad;i++){
         proveedor = pArchivo.leer(i);
 
@@ -45,9 +48,6 @@ void ProveedorManager::cargarNuevoProveedor(){
 
     cout << "INGRESE DIRECCION: " << endl;
     getline(cin, direccion);
-
-    cout << "¨SU ESTADO ES ACTIVO? 1- SI 0- NO: " << endl;
-    cin >> estado;
 
     proveedor = Proveedor(cuit, nombre, apellido, numTelefono, mail, direccion, estado);
 
