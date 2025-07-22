@@ -16,8 +16,19 @@ void ProveedorManager::cargarNuevoProveedor(){
 
     cin.ignore();
 
+    int cantidad = pArchivo.getCantidadRegistros();
+
     cout << "INGRESE CUIT: " << endl;
     getline(cin, cuit);
+
+    for(int i=0;i<cantidad;i++){
+        proveedor = pArchivo.leer(i);
+
+        if(proveedor.getCuit()==cuit){
+            cout << "ERROR: ESTE CUIT YA EXISTE." << endl;
+            return;
+        }
+    }
 
     cout << "INGRESE NOMBRE: " << endl;
     getline(cin, nombre);
